@@ -3,8 +3,7 @@ module.exports = {
     client: "pg",
     connection: {
       database: "wings",
-      // TODO add user...
-      user: "",
+      user: "wings",
       password: null,
     },
     migrations: {

@@ -7,3 +7,15 @@ Code Chrysalis Greenfield Project - Team: Zach, Josh, Jon
 ### `npm start`
 
 Runs the app in the development mode
+
+## Dependencies
+
+React, Express, Knex, PG
+
+## Dev Dependencies
+
+Nodemon
+
+## Setup
+
+Run npm install

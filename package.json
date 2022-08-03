@@ -18,7 +18,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "run": "node ./src/server.js",
+    "knex": "knex",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run",
+    "nodemon": "nodemon ./src/server.js"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }

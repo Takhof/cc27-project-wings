@@ -9,7 +9,6 @@
     table
       .integer("user_id")
       .notNullable();
-//      .references("profiles.user_id");
     table.string("post_text",500);
     table.string("post_photo",255);
     table

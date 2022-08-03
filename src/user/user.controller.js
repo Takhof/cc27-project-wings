@@ -23,7 +23,7 @@ module.exports = {
   // DEVELOPMENT ONLY
   index: async function (req, res) {
     const users = await userModel.getAll();
-    console.log("USERS: ", users);
+    // console.log("USERS: ", users);
     res.send(users);
   },
 };

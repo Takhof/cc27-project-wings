@@ -1,7 +1,14 @@
+// const path = require("path");
+
 const express = require("express");
 const cors = require("cors");
-// const path = require("path");
+
+const userController = require("./user/user.controller");
+const profileController = require("./profile/profile.controller");
+const postController = require("./post/post.controller");
+
 const app = express();
+
 const PORT = process.env.PORT || 3030;
 
 // *************************************************** MIDDLEWARE ***********************************************************
@@ -14,6 +21,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // *************************************************** GET REQUESTS ***********************************************************
+
+// user routes
+app.post("/users/save", userController.save);
+app.get("/users", userController.index);
+
+/*
+
+// REGISTER
+app.post("/api/register", (req, res) => {
+  // call model to update db (profiles)
+  // re-route to /api/newsfeed?
+});
 
 // LOGIN
 app.get("/api/login", (req, res) => {
@@ -41,12 +60,6 @@ app.get("/api/profile/:id", (req, res) => {
 
 // *************************************************** POST REQUESTS ***********************************************************
 
-// REGISTER
-app.post("/api/register", (req, res) => {
-  // call model to update db (profiles)
-  // re-route to /api/newsfeed?
-});
-
 // UPDATE PROFILE
 app.post("/api/profile", (req, res) => {
   // call model to update db (profiles)
@@ -58,6 +71,8 @@ app.post("/api/post", (req, res) => {
   // call model to update db (posts)
   // send newsfeed object to frontend
 });
+
+*/
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);

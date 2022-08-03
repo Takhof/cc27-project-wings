@@ -1,22 +1,23 @@
-import { NotificationResponseMessage } from "pg-protocol/dist/messages";
+import React, { useEffect, useState } from "react";
+
+const URL = "http://localhost:3030/";
 
 function App() {
-  let response;
+  const [response, setResponse] = useState("");
 
   const fetchResponse = async (e) => {
-    e.preventDefault();
-    const res = await fetch("http://localhost:3030/", { method: "GET" });
+    const res = await fetch(URL, { method: "GET" });
     const data = await res.json();
     console.log(data);
-    response = data;
+    setResponse(data);
   };
 
   return (
     <div>
       <header>
         <h1>Welcome to Wings 🦋</h1>
-        <button onClick={fetchResponse}>Submit</button>
-        <h3>{response || "placeholder"}</h3>
+        <button onClick={fetchResponse}>Talk to Server</button>
+        <h3>{response || "Placeholder"}</h3>
       </header>
     </div>
   );

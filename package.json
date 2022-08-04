@@ -24,6 +24,7 @@
     "knex": "knex",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
+    "seed_make": "knex seed:make profiles_seed",
     "nodemon": "nodemon ./src/server.js"
   },
   "eslintConfig": {

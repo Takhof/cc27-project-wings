@@ -1,18 +1,32 @@
 import React from "react";
 import { useState } from "react";
 
+const URL = "http://localhost:3030";
+
 function Login() {
 	const [formData, setFormData] = useState({});
 
-	const handleChange = (event) => {
-		const name = event.target.name;
-		const value = event.target.value;
+	const handleChange = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
 		setFormData((values) => ({ ...values, [name]: value }));
 	};
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		alert();
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		const options = {
+			method: "POST",
+			body: JSON.stringify(formData),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
+
+		const res = await fetch(`${URL}/users/login`, options);
+		const data = await res.json();
+		// TODO Redirect user to profile creation page
+		console.log("Data from Server", data);
 	};
 
 	return (

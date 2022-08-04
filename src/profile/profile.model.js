@@ -8,7 +8,7 @@ module.exports = {
       .then((res) => res[0]);
   },
 
-  getAll: function (limit = 10) {
+  getAll: function (limit = 30) {
     return knex
       .select({
         id: "profile_id",
@@ -20,7 +20,7 @@ module.exports = {
         photoURL: "profile_photo",
         cohort: "cc_cohort",
       })
-      .from(USERS_TABLE)
+      .from(PROFILES_TABLE)
       .orderBy("fullName")
       .limit(limit);
   },

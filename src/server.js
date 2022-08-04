@@ -16,9 +16,10 @@ app.use(cors()); // Required for front and backend using localhost
 app.use(express.json()); // Parse JSON
 app.use(express.urlencoded({ extended: true })); // Parse form-encoded data
 
-// ***** ROUTES *****
+// ***** ROUTES *********
 
 // user
+app.get("/users", userController.index); // DEV ONLY
 app.post("/users/login", userController.login); // login user
 app.post("/users/save", userController.save); // register new user
 
@@ -32,7 +33,7 @@ app.post("/profiles/save", profileController.save); // add new profile
 app.get("/posts", postController.index); // view all newsfeed posts
 app.post("/posts/save", postController.save); // add new post
 
-// ***** LISTEN *****
+// ***** LISTEN ********
 
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);

@@ -1,8 +1,5 @@
 const userModel = require("./user.model");
 
-// DELEGATE TO MODEL, RETURN TO VIEW
-
-// export object to server.js
 module.exports = {
   save: async function (req, res) {
     // id auto-generated
@@ -20,10 +17,13 @@ module.exports = {
     res.send(user);
   },
 
-  // DEVELOPMENT ONLY
+  login: async function (req, res) {
+    // TODO
+  },
+
+  // ***** DEVELOPMENT ONLY *****
   index: async function (req, res) {
     const users = await userModel.getAll();
-    // console.log("USERS: ", users);
     res.send(users);
   },
 };

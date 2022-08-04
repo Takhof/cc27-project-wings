@@ -1,11 +1,7 @@
 const knex = require("../knex");
-
-// KNEX HERE
-
 const USERS_TABLE = "users";
 
-// export to controller.js
-// insert second argument = what we return
+// insert second argument = return array
 module.exports = {
   create: function (user) {
     return knex(USERS_TABLE)
@@ -13,6 +9,7 @@ module.exports = {
       .then((res) => res[0]);
   },
 
+  // ***** DEVELOPMENT ONLY *****
   getAll: function (limit = 10) {
     return knex
       .select({

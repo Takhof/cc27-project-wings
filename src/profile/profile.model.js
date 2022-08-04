@@ -36,6 +36,15 @@ module.exports = {
       .first();
   },
 
+  update: function (id, data) {
+    // data is object with kvp either undefined or value
+    // knex seems to update only defined values
+    return knex(PROFILES_TABLE)
+      .where("profile_id", id)
+      .update(data, ["profile_id"])
+      .then((res) => res[0]);
+  },
+
   create: function (profile) {
     return knex(PROFILES_TABLE)
       .insert(profile, ["profile_id"])

@@ -11,8 +11,6 @@ const app = express();
 
 const PORT = process.env.PORT || 3030;
 
-// *************************************************** MIDDLEWARE ***********************************************************
-
 // Required for front and backend using localhost
 app.use(cors());
 // Parse JSON
@@ -20,11 +18,16 @@ app.use(express.json());
 // Parsing form-encoded data
 app.use(express.urlencoded({ extended: true }));
 
-// *************************************************** GET REQUESTS ***********************************************************
+// ********************************* ROUTES ***********************************
 
-// user routes
-app.post("/users/save", userController.save);
-app.get("/users", userController.index);
+// user
+app.post("/users/save", userController.save); // register new user
+
+// profile
+app.get("/profiles", profileController.index); // view all profiles
+app.post("/profiles/save", profileController.save); // add new profile
+
+// post
 
 /*
 
@@ -57,8 +60,6 @@ app.get("/api/profile/:id", (req, res) => {
   // call model to query db (profiles)
   // send profile object to frontend
 });
-
-// *************************************************** POST REQUESTS ***********************************************************
 
 // UPDATE PROFILE
 app.post("/api/profile", (req, res) => {

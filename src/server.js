@@ -10,12 +10,13 @@ const app = express();
 
 const PORT = process.env.PORT || 3030;
 
-// Required for front and backend using localhost
-app.use(cors());
-// Parse JSON
-app.use(express.json());
-// Parsing form-encoded data
-app.use(express.urlencoded({ extended: true }));
+// ***** MIDDLEWARE *****
+
+app.use(cors()); // Required for front and backend using localhost
+app.use(express.json()); // Parse JSON
+app.use(express.urlencoded({ extended: true })); // Parse form-encoded data
+
+// ***** ROUTES *****
 
 // user
 app.post("/users/login", userController.login); // login user
@@ -31,7 +32,8 @@ app.post("/profiles/save", profileController.save); // add new profile
 app.get("/posts", postController.index); // view all newsfeed posts
 app.post("/posts/save", postController.save); // add new post
 
-// start server
+// ***** LISTEN *****
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });

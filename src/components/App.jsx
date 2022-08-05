@@ -5,8 +5,6 @@ import Login from "./Login";
 import Header from "./Header";
 import Footer from "./Footer";
 
-// const URL = "http://localhost:3030";
-
 function App() {
   return (
     <div>

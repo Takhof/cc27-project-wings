@@ -2,8 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
-// const URL = "http://localhost:3030";
-
 function Login() {
   const [formData, setFormData] = useState({});
 
@@ -26,6 +24,7 @@ function Login() {
 
     const res = await fetch("/users/login", options);
     const data = await res.json();
+
     // TODO Redirect user to profile creation page
     console.log("Data from Server", data);
   };

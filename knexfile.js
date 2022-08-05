@@ -17,8 +17,7 @@ module.exports = {
   production: {
     client: "pg",
     connection: {
-      connectionString: process.env.DATABASE_URL,
-      ssl: { rejectUnauthorized: false },
+      connectionString: process.env.DATABASE_URL, // heroku addons
     },
     migrations: {
       directory: "./db/migrations",

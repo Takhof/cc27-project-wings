@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 
 const URL = "http://localhost:3030";
 
-function CreateProfile() {
+function CreateEditProfile() {
 	 const [formData, setFormData] = useState({});
 
 	const handleChange = (e) => {
@@ -100,4 +100,4 @@ function CreateProfile() {
 	);
 }
 
-export default CreateProfile;
+export default CreateEditProfile;

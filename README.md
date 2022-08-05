@@ -21,7 +21,7 @@ Run `npm install`
 
 ## Database Setup
 
-Database schema is located here: [/resources/db_schema.jpg](/resources/db_schema.jpg)
+Database schema is located here: [/resources/db_schema.png](/resources/db_schema.png)
 
 These instructions assume Postgres v 14.4 or later is installed.
 

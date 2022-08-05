@@ -6,10 +6,11 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState('');
   return (
     <div>
-      <Header />
-      <Login />
+      <Header loggedInUser={loggedInUser}/>
+      <Login setLoggedInUser={(value) => setLoggedInUser(value)} />
       <Footer />
     </div>
   );

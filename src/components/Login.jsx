@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
-function Login() {
+function Login({setLoggedInUser}) {
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
@@ -24,6 +24,8 @@ function Login() {
 
     const res = await fetch("/users/login", options);
     const data = await res.json();
+
+    setLoggedInUser(data);
 
     // TODO Redirect user to profile creation page
     console.log("Data from Server", data);

@@ -26,7 +26,7 @@ app.post("/users/save", userController.save); // register new user
 // profile
 app.get("/profiles", profileController.index); // view all profiles
 app.get("/profiles/view/:id", profileController.view); // view single profile
-app.get("/profiles/edit/:id", profileController.edit); // edit profile
+app.patch("/profiles/edit/:id", profileController.edit); // edit profile
 app.post("/profiles/save", profileController.save); // add new profile
 
 // post

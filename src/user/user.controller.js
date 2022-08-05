@@ -17,8 +17,16 @@ module.exports = {
 	},
 
 	login: async function (req, res) {
-		console.log(req.body);
-		res.send(JSON.stringify(req.body));
+		const { email, password } = req.body;
+
+		let user;
+
+		user = await userModel.login(email, password);
+		if (user.length === 0){
+			res.send("Invalid credentials");
+		} else {
+			res.send(user);
+		}
 	},
 
 	// ***** DEVELOPMENT ONLY *****

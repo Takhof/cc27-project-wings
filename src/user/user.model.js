@@ -9,13 +9,26 @@ module.exports = {
       .then((res) => res[0]);
   },
 
+  login: function (email, password) {
+    return knex
+      .select({
+        id: "user_id",
+        email: "email",
+      })
+      .from(USERS_TABLE)
+      .where({
+        email: email,
+        password: password,
+        active: true,
+      })
+  },
+
   // ***** DEVELOPMENT ONLY *****
   getAll: function (limit = 10) {
     return knex
       .select({
         id: "user_id",
         email: "email",
-        password: "password",
         active: "active",
         dateCreated: "date_created",
       })

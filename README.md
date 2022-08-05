@@ -51,6 +51,8 @@ and `npm run seed` to populate seed data. The seed scripts can be run over and o
 
 `psql -d wings -f ./db/reset_migrations.sql`
 
+Then you can re-run `npm run migrate`.
+
 ## Front-end
 
 Front-end Created with React/HTML/CSS.

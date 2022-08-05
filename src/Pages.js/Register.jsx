@@ -71,7 +71,9 @@ function Register() {
           />
           <input className="btn" type="submit" />
           <span className="links">
-            <a href="/">Already have an account? Click here to login</a>
+            <a className="register-link" href="/">
+              Already have an account? Click here to login
+            </a>
           </span>
         </form>
       </div>

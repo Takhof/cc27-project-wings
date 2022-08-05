@@ -5,9 +5,53 @@
 }
 
 body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER ************************************ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #607eaa;
+  color: #fff;
   padding: 24px;
 }
 
+/* LOGIN ************************************ */
+
+/* FOOTER ************************************ */
+
+.footer-links-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.4rem;
+  background-color: #a6d1e6;
+  color: #444;
+  padding: 24px;
+  font: #444;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  font-size: 12px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+a:hover,
+a:active {
+  color: rgb(253, 191, 83);
+}
+
+.copyright {
+  font-size: 8px;
+  color: #444;
+}
+
+/*
 .btn {
   border: none;
   cursor: pointer;
@@ -61,3 +105,4 @@ body {
   flex-direction: column;
   
 }
+*/ ;

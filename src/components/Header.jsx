@@ -1,14 +1,15 @@
 import React from "react";
+import "../styles.css";
 
 function Header(props) {
-	// console.log("♥️props: ", props.loggedInUser[0].email);
-	return (
-		<header>
-			<h1>Wings 🦋</h1>
-			<h2>Connecting CC students and alumni</h2>
-			<div>Logged in: {props ? props.loggedInUser : ""}</div>
-		</header>
-	);
+  // console.log("♥️props: ", props.loggedInUser[0].email);
+  return (
+    <header className="header">
+      <h1 className="header-title">Wings 🦋</h1>
+      <p>Welcome Back, Yoko</p>
+      {/* <p>Logged in: {props ? props.loggedInUser : ""}</p> */}
+    </header>
+  );
 }
 
 export default Header;

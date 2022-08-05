@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
-function Login({setLoggedInUser}) {
+function Login({ setLoggedInUser }) {
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {

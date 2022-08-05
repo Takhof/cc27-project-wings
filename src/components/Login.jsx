@@ -61,7 +61,7 @@ function Login() {
         />{" "}
         <input type="submit" />
         <span className="links">
-          <a href="/Register">Dont have an Account, Sign up here</a>
+          <a href="/Register">Don't have an Account? Sign up here</a>
           <a href="/CreateProfile">Create Profile/Edit</a>
           <a href="/Directory">Directory</a>
           <a href="/Contact">Contact us</a>

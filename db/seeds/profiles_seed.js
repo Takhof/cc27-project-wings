@@ -18,7 +18,7 @@ exports.seed = async function (knex) {
       cc_cohort: null,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: "aki2022",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile001.jpg",
     },
     {
       user_id: 2,
@@ -28,7 +28,7 @@ exports.seed = async function (knex) {
       cc_cohort: 22,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: "@shibuya109",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile002.jpg",
     },
     {
       user_id: 3,
@@ -38,7 +38,7 @@ exports.seed = async function (knex) {
       cc_cohort: 26,
       linkedin_profile: null,
       twitter_handle: "@shiba_inu_lover",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile003.jpg",
     },
     {
       user_id: 4,
@@ -48,7 +48,7 @@ exports.seed = async function (knex) {
       cc_cohort: 27,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: null,
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile004.jpg",
     },
     {
       user_id: 5,
@@ -59,7 +59,7 @@ exports.seed = async function (knex) {
       cc_cohort: 27,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: null,
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile005.jpg",
     },
     {
       user_id: 6,
@@ -69,7 +69,7 @@ exports.seed = async function (knex) {
       cc_cohort: 25,
       linkedin_profile: null,
       twitter_handle: "@knex_baby",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile006.jpg",
     },
     {
       user_id: 7,
@@ -79,7 +79,7 @@ exports.seed = async function (knex) {
       cc_cohort: 12,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: "@eggsnbacon",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile007.jpg",
     },
     {
       user_id: 8,
@@ -89,7 +89,7 @@ exports.seed = async function (knex) {
       cc_cohort: 11,
       linkedin_profile: null,
       twitter_handle: "@ekb48",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile008.jpg",
     },
     {
       user_id: 9,
@@ -99,7 +99,7 @@ exports.seed = async function (knex) {
       cc_cohort: 15,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: "@nokogiri92",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile009.jpg",
     },
     {
       user_id: 10,
@@ -109,7 +109,7 @@ exports.seed = async function (knex) {
       cc_cohort: 8,
       linkedin_profile: "https://www.linkedin.com/feed/",
       twitter_handle: "@yokohama",
-      profile_photo: "images/blank.jpeg",
+      profile_photo: "images/profile010.jpg",
     },
   ]);
 };

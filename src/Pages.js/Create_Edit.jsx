@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const URL = "http://localhost:3030";
 
@@ -38,6 +40,7 @@ function CreateProfile() {
 	};
 	return (
 		<div>
+			<Header />
 			<h2>Create/Edit </h2>
 			<form onSubmit={handleSubmit}>
 				<label for="email">Email*: </label>
@@ -98,6 +101,7 @@ function CreateProfile() {
 				/>
 				<button>Submit</button>
 			</form>
+			<Footer />
 		</div>
 	);
 }

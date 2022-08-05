@@ -4,10 +4,7 @@ function Header() {
 	return (
 		<header>
 			<h1>Wings</h1>
-			<h2>slogan</h2>
-			{/* <LINK> */}
-			<a>Directory</a>
-			{/* </LINK> */}
+			<h2>Connecting alumini to opportunities</h2>
 		</header>
 	);
 }

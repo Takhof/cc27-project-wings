@@ -10,7 +10,7 @@ Runs the app in the development mode
 
 ## Dependencies
 
-React, Express, Knex, PG
+React, React-Routes, Express, Knex, PG,
 
 ## Dev Dependencies
 
@@ -44,3 +44,10 @@ At the psql prompt create a user called 'wings' by entering:
 
 If you get this message, then your user has been set up successfully:
 `CREATE ROLE`
+
+Front-end Created with React/HTML/CSS.
+
+Created Routes with --
+"import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+This lets the developer create links between pages. Please see "https://reactrouter.com/docs/en/v6" for a detailed explanation on how to run this.

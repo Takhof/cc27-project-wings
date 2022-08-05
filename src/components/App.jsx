@@ -4,6 +4,7 @@ import "../styles.css";
 import Login from "./Login";
 import Header from "./Header";
 import Footer from "./Footer";
+import { BrowserRouter } from "react-router-dom";
 
 const URL = "http://localhost:3030";
 

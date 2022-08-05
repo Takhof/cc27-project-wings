@@ -32,6 +32,13 @@ function Login() {
 	return (
 		<div>
 			<h2>Login</h2>
+
+			<br />
+			<a href="/CreateProfile">Create Profile/Edit</a>
+			<br />
+			<a href="/Directory">Directory</a>
+			<a href="/Contact">Contact</a>
+
 			<form onSubmit={handleSubmit}>
 				<label for="email">Email*</label>
 				<input
@@ -48,9 +55,17 @@ function Login() {
 					value={formData.password || ""}
 					onChange={handleChange}
 					required
-				/>
-				<input type="submit" />
+				/>{" "}
 				Login
+				<input type="submit" />
+				<br />
+				<a href="/Register">Dont have an Account, Sign up here</a>
+				<br />
+				<a href="/CreateProfile">Create Profile/Edit</a>
+				<br />
+				<a href="/Directory">Directory</a>
+				<br />
+				<a href="/Contact">Contact us</a>
 			</form>
 		</div>
 	);

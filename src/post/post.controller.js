@@ -7,6 +7,16 @@ module.exports = {
   },
 
   save: async function (req, res) {
-    // TODO
+    const { user_id, post_text, photoURL } =
+      req.body;
+
+    const payload = {
+      user_id: id,
+      post_text: text,
+      post_photo: photoURL,
+    };
+
+    const post = await postModel.create(payload);
+    res.send(post);
   },
 };

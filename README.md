@@ -18,9 +18,11 @@ Nodemon
 
 ## Setup
 
-Run npm install
+Run `npm install`
 
 ## Database Setup
+
+Database schema located here: [resources/db_schema.jpg](resources/db_schema.jpg)
 
 These instructions assume Postgres v 14.4 or later is installed.
 

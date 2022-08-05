@@ -23,7 +23,7 @@ module.exports = {
 
 		user = await userModel.login(email, password);
 		if (user.length === 0){
-			res.send("Invalid credentials");
+			res.send(JSON.stringify("Invalid credentials"));
 		} else {
 			res.send(user);
 		}

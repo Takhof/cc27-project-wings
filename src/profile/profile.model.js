@@ -6,6 +6,7 @@ module.exports = {
     return knex
       .select({
         id: "profile_id",
+        userId: "user_id",
         email: "email",
         fullName: "full_name",
         about: "about",
@@ -23,6 +24,7 @@ module.exports = {
     return knex
       .select({
         id: "profile_id",
+        userId: "user_id",
         email: "email",
         fullName: "full_name",
         about: "about",

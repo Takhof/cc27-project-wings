@@ -3,12 +3,11 @@ const userModel = require("./user.model");
 module.exports = {
 	save: async function (req, res) {
 		// id auto-generated
-		const { email, password, active } = req.body;
+		const { email, password } = req.body;
 
 		const payload = {
 			email,
 			password,
-			active,
 		};
 
 		let user;

@@ -10,7 +10,7 @@ exports.up = function (knex) {
       .unique() // This is a constraint that prevents duplicate emails in the table
       .notNullable();
     table.string("password", 36).notNullable();
-    table.boolean("active");
+    table.boolean("active").defaultTo(true);
     table.dateTime("date_created").notNullable().defaultTo(knex.fn.now());
   });
 };

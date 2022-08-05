@@ -10,7 +10,7 @@ exports.seed = async function (knex) {
 
   await knex("profiles").insert([
     {
-      user_id: 2,
+      user_id: 1,
       email: "aki@yahoo.co.jp",
       full_name: "Aki Habara",
       about:
@@ -21,7 +21,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 3,
+      user_id: 2,
       email: "booyah@aol.com",
       full_name: "C. Buya",
       about: "Hello everyone 🤩 nice to meet you",
@@ -31,7 +31,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 4,
+      user_id: 3,
       email: "shin1997@hotmail.com",
       full_name: "Shin Juku",
       about: "Love databases. Looking for a role in database and back-end. 🧑🏻‍💻",
@@ -41,7 +41,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 5,
+      user_id: 4,
       email: "oliver_daiba@gmail.com",
       full_name: "O. Daiba",
       about: "Hi I'm Olly! please give me a job 😂",
@@ -51,7 +51,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 6,
+      user_id: 5,
       email: "mickey@disney.com",
       full_name: "D. Zunirando",
       about:
@@ -62,7 +62,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 7,
+      user_id: 6,
       email: "hara_juku@gmail.com",
       full_name: "Hara Juku",
       about: "❤️ startup life",
@@ -72,7 +72,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 8,
+      user_id: 7,
       email: "skytree@yahoo.co.jp",
       full_name: "Skye Tsurii",
       about: "customer engineer at google cloud",
@@ -82,7 +82,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 9,
+      user_id: 8,
       email: "ekb48@freemail.jp",
       full_name: "E. K. Bukuro",
       about: 'git commit -m "hope this works!"',
@@ -92,7 +92,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 10,
+      user_id: 9,
       email: "mumu@yahoo.com",
       full_name: "Musashi Murayama",
       about: "Shopify senior Ruby/Rails dev.",
@@ -102,7 +102,7 @@ exports.seed = async function (knex) {
       profile_photo: "images/blank.jpeg",
     },
     {
-      user_id: 11,
+      user_id: 10,
       email: "yoko.hama@codechrysalis.io",
       full_name: "Yoko Hama",
       about: "Developer at Mercari. Open to connecting.",

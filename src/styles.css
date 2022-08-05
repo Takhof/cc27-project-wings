@@ -21,7 +21,7 @@ body {
   padding: 24px;
 }
 
-/* LOGIN ************************************ */
+/* FORMS ************************************ */
 
 .form-container {
   padding: 24px;
@@ -81,6 +81,21 @@ span {
 
 .btn:hover {
   background: #1c3879;
+}
+
+/* FORMS - CREATE PROFILE ************************************ */
+
+.create-profile-form {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr;
+  column-gap: 48px;
+  align-items: stretch;
+}
+
+.profile-btn {
+  margin-top: 47px;
+  padding: 13px 20px;
 }
 
 /* FOOTER ************************************ */

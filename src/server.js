@@ -13,12 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 
 // ***** MIDDLEWARE *****
+app.use(express.static(path.join(__dirname, "../build")));
+console.log(__dirname);
 
+// if production, serve static content
 if (process.env.NODE_ENV === "production") {
-  // if production, serve static content
-  // having run: npm run build
-  // __dirname will take us to the root folder, then point to the build folder
-  app.use(express.static(path.join(__dirname, "build")));
+  // having run: npm run build: __dirname will take us to the root folder, then point to the build folder
+  app.use(express.static(path.join(__dirname, "../build")));
 }
 
 app.use(cors()); // Required for front and backend using localhost

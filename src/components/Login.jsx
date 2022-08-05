@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
-function Login({setLoggedInUser}) {
+function Login({ setLoggedInUser }) {
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
@@ -32,30 +32,40 @@ function Login({setLoggedInUser}) {
   };
 
   return (
-    <div className="whole">
-      <h2>Login</h2>
+    <div className="form-container">
       <form onSubmit={handleSubmit}>
-        <span classname="pass">
-          <label for="email">Email*</label>
+        <h2 clsasName="form-header">Login</h2>
+        <div className="form-item">
+          <label className="form-label" for="email">
+            Email<span>*</span>
+          </label>
           <input
+            className="form-input"
             type="email"
             name="email"
             value={formData.email || ""}
             onChange={handleChange}
             required
           />
-        </span>
-        <label for="password">Password*</label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password || ""}
-          onChange={handleChange}
-          required
-        />{" "}
-        <input type="submit" />
+        </div>
+        <div className="form-item">
+          <label className="form-label" for="password">
+            Password<span>*</span>
+          </label>
+          <input
+            className="form-input"
+            type="password"
+            name="password"
+            value={formData.password || ""}
+            onChange={handleChange}
+            required
+          />{" "}
+        </div>
+        <input className="btn" type="submit" />
         <span className="links">
-          <a href="/Register">First time user? Sign up here</a>
+          <a className="register-link" href="/Register">
+            First time user? Sign up here
+          </a>
         </span>
       </form>
     </div>

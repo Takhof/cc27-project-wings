@@ -1,3 +1,3 @@
 # for HEROKU
-release: npm run migrate-latest
+release: npm run migrate
 web: npm start

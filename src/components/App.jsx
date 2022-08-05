@@ -6,16 +6,16 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { BrowserRouter } from "react-router-dom";
 
-const URL = "http://localhost:3030";
+// const URL = "http://localhost:3030";
 
 function App() {
-	return (
-		<div>
-			<Header />
-			<Login />
-			<Footer />
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      <Login />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

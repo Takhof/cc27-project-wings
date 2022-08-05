@@ -7,11 +7,6 @@ const URL = "http://localhost:3030";
 
 function CreateProfile() {
 	 const [formData, setFormData] = useState({});
-	// const [formData, setFormData] = useState("");
-	// const [aboutData, setAboutData] = useState({});
-	// const [linkedInData, setLinkedInData] = useState({});
-	// const [twitterData, setTwitterData] = useState({});
-	// const [ccData, setCcData] = useState({});
 
 	const handleChange = (e) => {
 		const name = e.target.name;
@@ -24,7 +19,6 @@ function CreateProfile() {
 
 		console.log("formData:", formData);
 
-		//const body = {};
 		const options = {
 			method: "POST",
 			body: JSON.stringify(formData),
@@ -35,7 +29,7 @@ function CreateProfile() {
 
 		const res = await fetch(`${URL}/profiles/save`, options);
 		const data = await res.json();
-		// TODO Redirect user to profile creation page
+
 		console.log("Data from Server", data);
 	};
 	return (

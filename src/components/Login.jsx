@@ -34,14 +34,6 @@ function Login({setLoggedInUser}) {
   return (
     <div className="whole">
       <h2>Login</h2>
-      <span className="linkers">
-        <br />
-        <a href="/CreateProfile">Create Profile/Edit</a>
-        <br />
-        <a href="/Directory">Directory</a>
-        <a href="/Contact">Contact</a>
-      </span>
-
       <form onSubmit={handleSubmit}>
         <span classname="pass">
           <label for="email">Email*</label>
@@ -63,10 +55,7 @@ function Login({setLoggedInUser}) {
         />{" "}
         <input type="submit" />
         <span className="links">
-          <a href="/Register">Don't have an Account? Sign up here</a>
-          <a href="/CreateProfile">Create Profile/Edit</a>
-          <a href="/Directory">Directory</a>
-          <a href="/Contact">Contact us</a>
+          <a href="/Register">First time user? Sign up here</a>
         </span>
       </form>
     </div>

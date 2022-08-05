@@ -3,13 +3,12 @@ import React from "react";
 function Footer() {
 	return (
 		<div>
-			<a href="/Register">Sign up</a>
-			<br />
-			<a href="/Login">Login </a>
-			<br />
-			<a href="/Contact"> Contact us</a>
-			<br />
-			<h4>| Wings © 2022</h4>
+			[<a href="/Login">Login </a>]
+			[<a href="/Register">Sign up</a>]
+			[<a href="/CreateProfile">Create Profile</a>]
+      [<a href="/Directory">Directory</a>]
+			[<a href="/Contact"> Contact us</a>]
+			<small> Wings © 2022 Jozajo International </small>
 		</div>
 	);
 }

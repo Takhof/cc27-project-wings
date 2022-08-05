@@ -7,11 +7,11 @@ module.exports = {
   },
 
   save: async function (req, res) {
-    const { user_id, post_text, photoURL } =
+    const { userId, text, photoURL } =
       req.body;
 
     const payload = {
-      user_id: id,
+      user_id: userId,
       post_text: text,
       post_photo: photoURL,
     };

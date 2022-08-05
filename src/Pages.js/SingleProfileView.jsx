@@ -8,9 +8,9 @@ import Footer from "../components/Footer";
 function SingleProfileView() {
 	return (
 		<div>
-			<h2>Single Profile View </h2>
 			<div>
 			<Header />
+			<h2>Single Profile View </h2>
       <Profile />
       <CreatePost />
       <Newsfeed />
@@ -20,4 +20,4 @@ function SingleProfileView() {
 	);
 }
 
-export default Directory;
+export default SingleProfileView;

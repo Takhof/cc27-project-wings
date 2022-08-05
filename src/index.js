@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Register from "./Pages.js/Register";
 import CreateProfile from "./Pages.js/Create_Edit";
 import Directory from "./Pages.js/Directory";
+import SingleProfileView from "./Pages.js/SingleProfileView";
 import Contact from "./Pages.js/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,6 +19,7 @@ root.render(
 				<Route path="/Register" element={<Register />} />
 				<Route path="/CreateProfile" element={<CreateProfile />} />
 				<Route path="/Directory" element={<Directory />} />
+				<Route path="/SingleProfileView" element={<SingleProfileView />} />				
 				<Route path="/Contact" element={<Contact />} />
 			</Routes>
 		</BrowserRouter>

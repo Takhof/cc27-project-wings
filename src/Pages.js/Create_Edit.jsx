@@ -97,7 +97,6 @@ function CreateProfile() {
 					onChange={handleChange}
 					required
 				/> */}
-				<a href="/Login">Have an account? Click here to login</a>
 				<button>Submit</button>
 			</form>
 		</div>

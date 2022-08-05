@@ -41,5 +41,23 @@ body {
   margin-bottom: 12px;
 }
 
-.pswd {
+.whole{
+  text-align: center;
+}
+.links{
+  flex: 1 1 150px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+ 
+}
+.linkers{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+.pass{
+  display: flex;
+  flex-direction: column;
+  
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "../styles.css";
 
 const URL = "http://localhost:3030";
 
@@ -30,24 +31,27 @@ function Login() {
 	};
 
 	return (
-		<div>
+		<div className="whole">
 			<h2>Login</h2>
-
-			<br />
-			<a href="/CreateProfile">Create Profile/Edit</a>
-			<br />
-			<a href="/Directory">Directory</a>
-			<a href="/Contact">Contact</a>
+			<span className="linkers">
+				<br />
+				<a href="/CreateProfile">Create Profile/Edit</a>
+				<br />
+				<a href="/Directory">Directory</a>
+				<a href="/Contact">Contact</a>
+			</span>
 
 			<form onSubmit={handleSubmit}>
-				<label for="email">Email*</label>
-				<input
-					type="email"
-					name="email"
-					value={formData.email || ""}
-					onChange={handleChange}
-					required
-				/>
+				<span classname="pass">
+					<label for="email">Email*</label>
+					<input
+						type="email"
+						name="email"
+						value={formData.email || ""}
+						onChange={handleChange}
+						required
+					/>
+				</span>
 				<label for="password">Password*</label>
 				<input
 					type="password"
@@ -56,16 +60,13 @@ function Login() {
 					onChange={handleChange}
 					required
 				/>{" "}
-				Login
 				<input type="submit" />
-				<br />
-				<a href="/Register">Dont have an Account, Sign up here</a>
-				<br />
-				<a href="/CreateProfile">Create Profile/Edit</a>
-				<br />
-				<a href="/Directory">Directory</a>
-				<br />
-				<a href="/Contact">Contact us</a>
+				<span className="links">
+					<a href="/Register">Dont have an Account, Sign up here</a>
+					<a href="/CreateProfile">Create Profile/Edit</a>
+					<a href="/Directory">Directory</a>
+					<a href="/Contact">Contact us</a>
+				</span>
 			</form>
 		</div>
 	);

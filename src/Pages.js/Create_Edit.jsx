@@ -40,9 +40,9 @@ function CreateProfile() {
 		<div>
 			<h2>Create/Edit </h2>
 			<form onSubmit={handleSubmit}>
-				<label for="fname">Email*: </label>
+				<label for="email">Email*: </label>
 				<input
-					type="text"
+					type="email"
 					name="email"
 					value={formData.email}
 					onChange={handleChange}

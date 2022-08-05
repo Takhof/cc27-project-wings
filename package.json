@@ -29,9 +29,9 @@
     "server": "node ./src/server.js",
     "heroku-postbuild": "npm install && npm run build",
     "knex": "knex",
-    "migrate-latest": "npx knex migrate:latest --knexfile src/db/knexfile.js",
-    "migrate-down": "npx knex migrate:down --knexfile src/db/knexfile.js",
-    "seed-data": "npx knex seed:run --knexfile src/db/knexfile.js",
+    "migrate-latest": "npx knex migrate:latest --knexfile ./knexfile.js",
+    "migrate-down": "npx knex migrate:down --knexfile ./knexfile.js",
+    "seed-data": "npx knex seed:run --knexfile ./knexfile.js",
     "nodemon": "nodemon ./src/server.js"
   },
   "eslintConfig": {

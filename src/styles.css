@@ -28,6 +28,12 @@ body {
   margin: 20px auto;
 }
 
+.form-header {
+  color: #444;
+  font-size: 32px;
+  margin-bottom: 32px;
+}
+
 form {
   width: 50%;
   margin: 20px auto;
@@ -40,7 +46,9 @@ form {
 .form-label {
   display: block;
   padding: 10px 0;
-  color: #263238;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 6px;
 }
 
 .form-input {
@@ -50,6 +58,7 @@ form {
   padding: 15px;
   border: 1px solid #c4c4c4;
   border-radius: 5px;
+  margin-bottom: 18px;
 }
 
 span {

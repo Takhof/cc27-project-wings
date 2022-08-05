@@ -61,7 +61,7 @@ function Register() {
 					required
 				/>
 				<button>Submit</button>
-				<a href="/Login">Already have an account? Click here to login</a>
+				<a href="/">Already have an account? Click here to login</a>
 			</form>
 			<Footer />
 		</div>

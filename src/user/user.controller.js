@@ -19,7 +19,7 @@ module.exports = {
 
 	login: async function (req, res) {
 		console.log(req.body);
-		res.send(JSON.stringify("Thank you for logging in!"));
+		res.send(JSON.stringify(req.body));
 	},
 
 	// ***** DEVELOPMENT ONLY *****

@@ -1,6 +1,8 @@
 // const path = require("path");
 const express = require("express");
 const cors = require("cors");
+// to work with directory paths - see static middleware
+const path = require("path");
 
 const userController = require("./user/user.controller");
 const profileController = require("./profile/profile.controller");
@@ -11,6 +13,13 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 
 // ***** MIDDLEWARE *****
+
+if (process.env.NODE_ENV === "production") {
+  // if production, serve static content
+  // having run: npm run build
+  // __dirname will take us to the root folder, then point to the build folder
+  app.use(express.static(path.join(__dirname, "build")));
+}
 
 app.use(cors()); // Required for front and backend using localhost
 app.use(express.json()); // Parse JSON

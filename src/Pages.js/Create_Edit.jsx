@@ -1,35 +1,102 @@
 import React from "react";
-import Header from "../components/Header";
-// import Footer from "src/components/Footer";
+import { useState } from "react";
+
+const URL = "http://localhost:3030";
 
 function CreateProfile() {
+	// const [formData, setFormData] = useState({});
+	const [formData, setFormData] = useState("");
+	// const [aboutData, setAboutData] = useState({});
+	// const [linkedInData, setLinkedInData] = useState({});
+	// const [twitterData, setTwitterData] = useState({});
+	// const [ccData, setCcData] = useState({});
+
+	const handleChange = (e) => {
+		const name = e.target.name;
+		const value = e.target.value;
+		setFormData((values) => ({ ...values, [name]: value }));
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		console.log("formData:", formData);
+
+		const body = {};
+		const options = {
+			method: "POST",
+			body: JSON.stringify(setFormData),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		};
+
+		const res = await fetch(`${URL}/profiles/save`, options);
+		const data = await res.json();
+		// TODO Redirect user to profile creation page
+		console.log("Data from Server", data);
+	};
 	return (
 		<div>
 			<h2>Create/Edit </h2>
-			<form>
-				<input type="file" id="myFile" name="filename" />
-				<br />
-				<br />
-				<label for="fname">Full Name*: </label>
-				<input type="text" name="fname" />
-				<br />
-				<br />
+			<form onSubmit={handleSubmit}>
+				<label for="fname">Email*: </label>
+				<input
+					type="text"
+					name="email"
+					value={formData.email}
+					onChange={handleChange}
+					required
+				/>
 				<label for="about">About: </label>
-				<input type="text" name="about" />
-				<br />
-				<br />
+				<label for="fullName">Full Name*: </label>
+				<input
+					type="text"
+					name="fullName"
+					value={formData.fullName}
+					onChange={handleChange}
+					required
+				/>
+				<label for="fullName">ID: </label>
+				<input
+					type="text"
+					name="id"
+					value={formData.id}
+					onChange={handleChange}
+					required
+				/>
+				{/* <label for="about">About: </label>
+				<input
+					type="text"
+					name="about"
+					value={formData.about || ""}
+					onChange={handleChange}
+					required
+				/>
 				<label for="LinkedIn">LinkedIn: </label>
-				<input type="text" name="LinkedIn" />
-				<br />
-				<br />
+				<input
+					type="text"
+					name="LinkedIn"
+					value={formData.LinkedIn || ""}
+					onChange={handleChange}
+					required
+				/>
 				<label for="twitter">Twitter: </label>
-				<input type="text" name="Twitter" />
-				<br />
-				<br />
+				<input
+					type="text"
+					name="Twitter"
+					value={formData.Twitter || ""}
+					onChange={handleChange}
+					required
+				/>
 				<label for="CC_Cohort">CC_Cohort: </label>
-				<input type="text" name="CC_Cohort" />
-				<br />
-				<br />
+				<input
+					type="text"
+					name="CC_Cohort"
+					value={formData.CC_Cohort || ""}
+					onChange={handleChange}
+					required
+				/> */}
 				<a href="/Login">Have an account? Click here to login</a>
 				<button>Submit</button>
 			</form>

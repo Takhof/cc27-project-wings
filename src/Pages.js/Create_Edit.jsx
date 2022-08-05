@@ -4,8 +4,8 @@ import { useState } from "react";
 const URL = "http://localhost:3030";
 
 function CreateProfile() {
-	// const [formData, setFormData] = useState({});
-	const [formData, setFormData] = useState("");
+	 const [formData, setFormData] = useState({});
+	// const [formData, setFormData] = useState("");
 	// const [aboutData, setAboutData] = useState({});
 	// const [linkedInData, setLinkedInData] = useState({});
 	// const [twitterData, setTwitterData] = useState({});
@@ -22,10 +22,10 @@ function CreateProfile() {
 
 		console.log("formData:", formData);
 
-		const body = {};
+		//const body = {};
 		const options = {
 			method: "POST",
-			body: JSON.stringify(setFormData),
+			body: JSON.stringify(formData),
 			headers: {
 				"Content-Type": "application/json",
 			},
@@ -48,7 +48,6 @@ function CreateProfile() {
 					onChange={handleChange}
 					required
 				/>
-				<label for="about">About: </label>
 				<label for="fullName">Full Name*: </label>
 				<input
 					type="text"
@@ -57,7 +56,7 @@ function CreateProfile() {
 					onChange={handleChange}
 					required
 				/>
-				<label for="fullName">ID: </label>
+				<label for="id">ID: </label>
 				<input
 					type="text"
 					name="id"
@@ -65,7 +64,7 @@ function CreateProfile() {
 					onChange={handleChange}
 					required
 				/>
-				{/* <label for="about">About: </label>
+				<label for="about">About: </label>
 				<input
 					type="text"
 					name="about"
@@ -73,30 +72,30 @@ function CreateProfile() {
 					onChange={handleChange}
 					required
 				/>
-				<label for="LinkedIn">LinkedIn: </label>
+				<label for="linkedIn">LinkedIn: </label>
 				<input
 					type="text"
-					name="LinkedIn"
-					value={formData.LinkedIn || ""}
+					name="linkedIn"
+					value={formData.linkedIn || ""}
 					onChange={handleChange}
 					required
 				/>
 				<label for="twitter">Twitter: </label>
 				<input
 					type="text"
-					name="Twitter"
-					value={formData.Twitter || ""}
+					name="twitter"
+					value={formData.twitter || ""}
 					onChange={handleChange}
 					required
 				/>
-				<label for="CC_Cohort">CC_Cohort: </label>
+				<label for="cohort">CC Cohort: </label>
 				<input
 					type="text"
-					name="CC_Cohort"
-					value={formData.CC_Cohort || ""}
+					name="cohort"
+					value={formData.cohort || ""}
 					onChange={handleChange}
 					required
-				/> */}
+				/>
 				<button>Submit</button>
 			</form>
 		</div>

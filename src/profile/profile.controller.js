@@ -39,8 +39,10 @@ module.exports = {
 
   save: async function (req, res) {
     // TODO need to obtain user_id...
-    let id = 15;
-    const { email, fullName, about, linkedIn, twitter, photoURL, cohort } =
+    //let id = 15;
+    console.log("this right here-->", req.body);
+
+    const { id, email, fullName, about, linkedIn, twitter, photoURL, cohort } =
       req.body;
 
     const payload = {

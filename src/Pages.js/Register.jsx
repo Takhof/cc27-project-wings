@@ -23,6 +23,7 @@ function Register() {
 				"Content-Type": "application/json",
 			},
 		};
+
 		const res = await fetch(`${URL}/users/save`, options);
 		const data = await res.json();
 		console.log("Data from Server", data);
@@ -58,10 +59,9 @@ function Register() {
 					value={formData.password || ""}
 					onChange={handleChange}
 					required
-				/>{" "}
-				Login
-				<a href="/Login">Have an account? Click here to login</a>
+				/>
 				<button>Submit</button>
+				<a href="/Login">Already have an account? Click here to login</a>
 			</form>
 			<Footer />
 		</div>

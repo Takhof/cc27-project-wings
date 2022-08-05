@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import { useState } from "react";
 
 const URL = "http://localhost:3030";
@@ -22,14 +23,15 @@ function Register() {
 				"Content-Type": "application/json",
 			},
 		};
-		//LOGIN PATH NEEDS TO CHANGE
 		const res = await fetch(`${URL}/users/save`, options);
 		const data = await res.json();
-		// TODO Redirect user to profile creation page
 		console.log("Data from Server", data);
+		// TODO Redirect user to profile creation page
+
 	};
 	return (
 		<div>
+			<Header />
 			<h2>Register</h2>
 
 			<form onSubmit={handleSubmit}>
@@ -61,19 +63,9 @@ function Register() {
 				<a href="/Login">Have an account? Click here to login</a>
 				<button>Submit</button>
 			</form>
+			<Footer />
 		</div>
 	);
 }
 export default Register;
 
-// {
-/* export default Register;
-<label for="email">Email*</label>
-				<input type="email" name="email" required />
-
-				<label for="password">Password*</label>
-				<input type="password" name="password" required />
-
-				<label for="password">Confirm Password*</label>
-				<input type="password" name="password" required /> */
-// }

@@ -22,8 +22,8 @@ function Register() {
 				"Content-Type": "application/json",
 			},
 		};
-
-		const res = await fetch(`${URL}/users/login`, options);
+		//LOGIN PATH NEEDS TO CHANGE
+		const res = await fetch(`${URL}/users/save`, options);
 		const data = await res.json();
 		// TODO Redirect user to profile creation page
 		console.log("Data from Server", data);

@@ -45,6 +45,13 @@ app.post("/profiles/save", profileController.save); // add new profile
 app.get("/posts", postController.index); // view all newsfeed posts
 app.post("/posts/save", postController.save); // add new post
 
+// ***** CATCH ALL ********
+
+// catch anything that isn't a defined route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build/index.html"));
+});
+
 // ***** LISTEN ********
 
 app.listen(PORT, () => {

@@ -9,8 +9,8 @@ function Footer() {
         <a href="/CreateProfile">Create Profile</a>
         <a href="/Directory">Directory</a>
         <a href="/Contact"> Contact us</a>
+        <small className="copyright"> Wings © 2022 Jozajo International </small>
       </div>
-      <small className="copyright"> Wings © 2022 Jozajo International </small>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* HEADER ************************************ */
@@ -21,13 +23,70 @@ body {
 
 /* LOGIN ************************************ */
 
+.form-container {
+  padding: 24px;
+  margin: 20px auto;
+}
+
+form {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.form-item {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  padding: 10px 0;
+  color: #263238;
+}
+
+.form-input {
+  /* of container */
+  width: 100%;
+  color: #c4c4c4;
+  padding: 15px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+}
+
+span {
+  color: #ff0000;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #fff;
+  background: #607eaa;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
+}
+
+.btn:hover {
+  background: #1c3879;
+}
+
 /* FOOTER ************************************ */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 .footer-links-container {
   display: flex;
   justify-content: space-between;
   gap: 2.4rem;
-  background-color: #a6d1e6;
+  background-color: #607eaa;
   color: #444;
   padding: 24px;
   font: #444;
@@ -46,9 +105,17 @@ a:active {
   color: rgb(253, 191, 83);
 }
 
+.register-link:link,
+.register-link:visited {
+  text-decoration: none;
+  font-size: 12px;
+  color: #444;
+  transition: all 0.3s;
+}
+
 .copyright {
   font-size: 8px;
-  color: #444;
+  color: #fff;
 }
 
 /*

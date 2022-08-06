@@ -18,13 +18,17 @@ function Profile(userId) {
 	return (
 		<div>
       <h3>Profile</h3>
-			<img src={profile.photoURL}></img>
-			<p>Name: <span>{profile.fullName}</span></p>
-			<p>Email: <span>{profile.email}</span></p>
-			<p>About: <span>{profile.about}</span></p>
-			<p>Linkedin URL: <span>{profile.linkedIn}</span></p>
-			<p>Twitter Handle: <span>{profile.twitter}</span></p>
-			<p>Cohort: <span>{profile.cohort && "CC" + profile.cohort}</span></p>
+			{profile && (
+				<div>
+					<img src={profile.photoURL}></img>
+					<p>Name: <span>{profile.fullName}</span></p>
+					<p>Email: <span>{profile.email}</span></p>
+					<p>About: <span>{profile.about}</span></p>
+					<p>Linkedin URL: <span>{profile.linkedIn}</span></p>
+					<p>Twitter Handle: <span>{profile.twitter}</span></p>
+					<p>CC Cohort: <span>{profile.cohort && "CC" + profile.cohort}</span></p>
+				</div>
+			)};
 		</div>
 	);
 }

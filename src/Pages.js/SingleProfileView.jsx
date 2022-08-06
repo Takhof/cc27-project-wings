@@ -12,12 +12,14 @@ function SingleProfileView() {
   // console.log("ID FROM LOGIN PAGE", location.state.id);
 
   // access local storage, set in Login
-  const userID = localStorage.getItem("id");
-  console.log("USER ID FROM LOCAL STORAGE: ", userID);
+  const loggedInUserId = localStorage.getItem("id");
+  console.log("USER ID FROM LOCAL STORAGE: ", loggedInUserId);
 
   // Get userId from querystring
   const queryParams = new URLSearchParams(window.location.search);
-  let userId = queryParams.get("user_id");
+  let userId = queryParams.get("user_id") || loggedInUserId;
+
+  console.log("Showing profile data for UserID: ", userId);
 
   return (
     <div>

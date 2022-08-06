@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 
 function SingleProfileView() {
   const location = useLocation();
-  console.log("ID FROM LOGIN PAGE", location.state.id);
+  console.log("ID FROM LOGIN PAGE", location.state.email);
   // Get userId from querystring
   const queryParams = new URLSearchParams(window.location.search);
   let userId = queryParams.get("user_id");

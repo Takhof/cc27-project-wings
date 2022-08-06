@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className="header">
       <h1 className="header-title">Wings 🦋</h1>
-      <p>Welcome Back, {email}</p>
+      {email && <p>Welcome Back, {email}</p>}
     </header>
   );
 }

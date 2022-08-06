@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "../styles.css";
 
 function Login({ setLoggedInUser }) {
+  // clear localStorage on page load
+  localStorage.clear();
+
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();

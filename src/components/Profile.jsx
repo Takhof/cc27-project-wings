@@ -32,27 +32,29 @@ function Profile(userId) {
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Name:</p>
-            <p>{profile.fullName}</p>
+            <p className="profile-content-text">{profile.fullName}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Email:</p>
-            <p>{profile.email}</p>
+            <p className="profile-content-text">{profile.email}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">About:</p>
-            <p>{profile.about}</p>
+            <p className="profile-content-text">{profile.about}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Linkedin URL:</p>
-            <p>{profile.linkedIn}</p>
+            <p className="profile-content-text">{profile.linkedIn}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Twitter Handle:</p>
-            <p>{profile.twitter}</p>
+            <p className="profile-content-text">{profile.twitter}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">CC Cohort:</p>
-            <p>{profile.cohort && "CC" + profile.cohort}</p>
+            <p className="profile-content-text">
+              {profile.cohort && "CC" + profile.cohort}
+            </p>
           </div>
         </div>
       )}

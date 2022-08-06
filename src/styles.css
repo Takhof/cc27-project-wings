@@ -32,7 +32,7 @@ body {
 
 .spv-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.7fr 1fr;
 }
 
 .profile-container {
@@ -47,7 +47,7 @@ body {
 }
 
 .profile-img-container {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .profile-img {
@@ -58,7 +58,7 @@ body {
 }
 
 .profile-content {
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 
 .profile-content-title {
@@ -66,6 +66,10 @@ body {
   font-weight: bolder;
   color: #444;
   margin-bottom: 6px;
+}
+
+.profile-content-text {
+  color: #444;
 }
 
 /* FORMS ************************************ */

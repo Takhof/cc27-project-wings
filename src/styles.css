@@ -234,6 +234,7 @@ body {
 
 .profile-about {
   font-size: 14px;
+  color: var(--grey-text);
 }
 
 .profile-cohort {
@@ -347,10 +348,10 @@ a:visited {
   transition: all 0.3s;
 }
 
-a:hover,
+/* a:hover,
 a:active {
   color: var(--accent-color);
-}
+} */
 
 .register-link:link,
 .register-link:visited {

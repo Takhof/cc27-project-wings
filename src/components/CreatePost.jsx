@@ -36,7 +36,6 @@ function CreatePost() {
 
   return (
     <div className="create-post-container">
-      {/* <h3 className="create-post-header">Post Here:</h3> */}
       <form className="create-post-form" onSubmit={handleSubmit}>
         <div>
           <label className="create-post-label" htmlFor="postText">
@@ -52,19 +51,6 @@ function CreatePost() {
             required
           />
         </div>
-        {/* <div>
-          <label className="create-post-label" htmlFor="userId">
-            User ID:{" "}
-          </label>
-          <input
-            className="create-post-input"
-            type="text"
-            name="userId"
-            value={formData.userId}
-            onChange={handleChange}
-            required
-          />
-        </div> */}
         <input className="create-post-btn" type="submit" />
       </form>
     </div>

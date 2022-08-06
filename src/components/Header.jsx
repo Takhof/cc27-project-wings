@@ -1,8 +1,7 @@
 import React from "react";
 import "../styles.css";
 
-function Header(props) {
-  // console.log("♥️props: ", props.loggedInUser[0].email);
+function Header() {
   return (
     <header className="header">
       <h1 className="header-title">Wings 🦋</h1>

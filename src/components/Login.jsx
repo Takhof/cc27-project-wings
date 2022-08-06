@@ -31,7 +31,7 @@ function Login({ setLoggedInUser }) {
     setLoggedInUser(data);
 
     if (data !== "" && data !== "Invalid credentials") {
-      navigate("/SingleProfileView");
+      navigate("/SingleProfileView", { state: { id: 1 } });
     }
   };
 

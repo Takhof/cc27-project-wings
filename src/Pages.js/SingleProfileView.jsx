@@ -4,13 +4,8 @@ import Profile from "../components/Profile";
 import CreatePost from "../components/CreatePost";
 import Newsfeed from "../components/Newsfeed";
 import Footer from "../components/Footer";
-// import { useLocation } from "react-router-dom";
 
 function SingleProfileView() {
-  // for catching data passed in via navigate, if applicable
-  // const location = useLocation();
-  // console.log("ID FROM LOGIN PAGE", location.state.id);
-
   // access local storage, set in Login
   const userID = localStorage.getItem("id");
   console.log("USER ID FROM LOCAL STORAGE: ", userID);

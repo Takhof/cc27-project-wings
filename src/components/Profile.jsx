@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 
-function Profile(userId) {
+function Profile({userId}) {
   const [profile, setProfile] = useState();
 
   const getProfileData = async () => {
-    const res = await fetch(`/profiles/view/${userId.userId}`, {
+    const res = await fetch(`/profiles/view/${userId}`, {
       method: "GET",
     });
     const data = await res.json();
+    console.log("Profile:", data);
 
     setProfile(data);
-    console.log("Profile:", profile);
   };
 
   useEffect(() => {

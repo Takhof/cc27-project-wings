@@ -34,7 +34,7 @@ module.exports = {
         cohort: "cc_cohort",
       })
       .from(PROFILES_TABLE)
-      .where("profile_id", id)
+      .where("user_id", id)
       .first();
   },
 

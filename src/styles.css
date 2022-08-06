@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
+:root {
+  --main-theme-color: #607eaa;
+  --accent-color: #fec260;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -23,7 +28,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #607eaa;
+  background-color: var(--main-theme-color);
   color: #fff;
   padding: 24px;
 }
@@ -53,7 +58,8 @@ body {
 .profile-img {
   width: 150px;
   height: 150px;
-  border: 5px solid #607eaa;
+  border: 5px solid;
+  border-color: var(--accent-color);
   border-radius: 50%;
 }
 
@@ -121,7 +127,7 @@ span {
   cursor: pointer;
   font-size: 18px;
   color: #fff;
-  background: #607eaa;
+  background: var(--main-theme-color);
   width: 100%;
   padding: 15px 20px;
   border-radius: 5px;
@@ -163,7 +169,7 @@ span {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
-  background-color: #607eaa;
+  background-color: var(--main-theme-color);
   color: #444;
   padding: 10px;
   font: #444;
@@ -179,7 +185,7 @@ a:visited {
 
 a:hover,
 a:active {
-  color: rgb(253, 191, 83);
+  color: var(--accent-color);
 }
 
 .register-link:link,

@@ -112,7 +112,7 @@ span {
 .footer-links-container {
   display: flex;
   justify-content: space-between;
-  gap: 2.4rem;
+  gap: 2rem;
   background-color: #607eaa;
   color: #444;
   padding: 10px;
@@ -148,13 +148,17 @@ a:active {
 .test-container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(3, 5vw); */
   grid-gap: 40px;
   align-items: center;
 
 }   
 
+.img{
+  width: 100%;
+  width: 60px;
+  height: 60px;
+}
 
-
-
-
+.Picture{
+  text-align: center;
+}

@@ -39,9 +39,12 @@ function Login({ setLoggedInUser }) {
       localStorage.setItem("id", data.id);
       localStorage.setItem("email", data.email);
 
+      // redirect
       navigate("/SingleProfileView");
     } else if (data === "Invalid credentials") {
+      // reset form input
       setFormData("");
+      // conditionally render error
       setError(true);
     }
   };

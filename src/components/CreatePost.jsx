@@ -33,34 +33,49 @@ function CreatePost() {
   };
 
   return (
-    <div className="createpost">
-      <h3>New Post</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="postText">Post: </label>
-        <input
-          type="textarea"
-          name="text"
-          value={formData.text}
-          onChange={handleChange}
-          placeholder="How are you feeling today?"
-          required
-        />
-        <label htmlFor="userId">User ID: </label>
-        <input
-          type="text"
-          name="userId"
-          value={formData.userId}
-          onChange={handleChange}
-          required
-        />
-        <label htmlFor="photoURL">Photo: </label>
-        <input
-          type="text"
-          name="photoURL"
-          value={formData.photoURL}
-          onChange={handleChange}
-        />
-        <button>Submit</button>
+    <div className="create-post-container">
+      {/* <h3 className="create-post-header">Post Here:</h3> */}
+      <form className="create-post-form" onSubmit={handleSubmit}>
+        <div>
+          <label className="create-post-label" htmlFor="postText">
+            What's going on?{" "}
+          </label>
+          <input
+            className="create-post-input"
+            type="textarea"
+            name="text"
+            value={formData.text}
+            onChange={handleChange}
+            placeholder="Post here..."
+            required
+          />
+        </div>
+        {/* <div>
+          <label className="create-post-label" htmlFor="userId">
+            User ID:{" "}
+          </label>
+          <input
+            className="create-post-input"
+            type="text"
+            name="userId"
+            value={formData.userId}
+            onChange={handleChange}
+            required
+          />
+        </div> */}
+        {/* <div>
+          <label className="create-post-label" htmlFor="photoURL">
+            Photo:{" "}
+          </label>
+          <input
+            className="create-post-input"
+            type="text"
+            name="photoURL"
+            value={formData.photoURL}
+            onChange={handleChange}
+          />
+        </div> */}
+        <input className="create-post-btn" type="submit" />
       </form>
     </div>
   );

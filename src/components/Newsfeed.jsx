@@ -17,7 +17,7 @@ function Newsfeed() {
   return (
     <div className="newsfeed-container">
       <h3 className="newsfeed-header">Newsfeed:</h3>
-      <div className="newsfeed-posts-container">
+      <div>
         {posts && (
           <div>
             {posts.map((post) => {

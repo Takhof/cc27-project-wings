@@ -50,7 +50,7 @@ function Login({ setLoggedInUser }) {
 
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
+      <form class="main-form" onSubmit={handleSubmit}>
         <h2 className="form-header">Login</h2>
         <div className="form-item">
           <label className="form-label" htmlFor="email">

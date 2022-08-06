@@ -22,7 +22,7 @@ function SingleProfileView() {
         <Header />
         <div className="spv-container">
           <Profile userId={userId} />
-          <div className="newsfeed-container">
+          <div className="posts-main-container">
             <CreatePost />
             <Newsfeed />
           </div>

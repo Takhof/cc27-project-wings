@@ -46,12 +46,12 @@ At the psql prompt create a user called 'wings' by entering:
 If you get this message, then your user has been set up successfully:
 `CREATE ROLE`
 
-Now that your database is set up, run `npm run migrate` to create the tables, 
-and `npm run seed` to populate seed data. The seed scripts can be run over and over to restore to the original seed data. If however, you need to re-run the migration, run the following command.
+Now that your database is set up, run `npm run migrate-latest` to create the tables,
+and `npm run seed-data` to populate seed data. The seed scripts can be run over and over to restore to the original seed data. If however, you need to re-run the migration, run the following command.
 
 `psql -d wings -f ./db/reset_migrations.sql`
 
-Then you can re-run `npm run migrate`.
+Then you can re-run `npm run migrate-latest`.
 
 ## Front-end
 

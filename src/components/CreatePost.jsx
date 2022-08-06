@@ -2,21 +2,23 @@ import React from "react";
 import { useState } from "react";
 import "../styles.css";
 
-const URL = "http://localhost:3030";
-
 function CreatePost() {
   const [formData, setFormData] = useState({});
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+    const userId = localStorage.getItem("id");
+
     setFormData((values) => ({ ...values, [name]: value }));
+    setFormData((values) => ({ ...values, userId: userId }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     // add userId
-    console.log("formData:", formData);
+    console.log("formData INCLUDING ID?:", formData);
 
     const options = {
       method: "POST",
@@ -26,7 +28,7 @@ function CreatePost() {
       },
     };
 
-    const res = await fetch(`${URL}/posts/save`, options);
+    const res = await fetch("/posts/save", options);
     const data = await res.json();
 
     console.log("Data from Server", data);
@@ -61,18 +63,6 @@ function CreatePost() {
             value={formData.userId}
             onChange={handleChange}
             required
-          />
-        </div> */}
-        {/* <div>
-          <label className="create-post-label" htmlFor="photoURL">
-            Photo:{" "}
-          </label>
-          <input
-            className="create-post-input"
-            type="text"
-            name="photoURL"
-            value={formData.photoURL}
-            onChange={handleChange}
           />
         </div> */}
         <input className="create-post-btn" type="submit" />

@@ -3,6 +3,7 @@
 :root {
   --main-theme-color: #607eaa;
   --accent-color: #fec260;
+  --grey-text: var(--grey-text);
 }
 
 * {
@@ -47,7 +48,7 @@ body {
 
 .profile-header {
   font-size: 24px;
-  color: #444;
+  color: var(--grey-text);
   margin-bottom: 32px;
 }
 
@@ -70,12 +71,12 @@ body {
 .profile-content-title {
   font-size: 16px;
   font-weight: bolder;
-  color: #444;
+  color: var(--grey-text);
   margin-bottom: 6px;
 }
 
 .profile-content-text {
-  color: #444;
+  color: var(--grey-text);
 }
 
 /* FORMS ************************************ */
@@ -86,7 +87,7 @@ body {
 }
 
 .form-header {
-  color: #444;
+  color: var(--grey-text);
   font-size: 32px;
   margin-bottom: 32px;
 }
@@ -104,7 +105,7 @@ form {
   display: block;
   padding: 10px 0;
   font-size: 18px;
-  color: #444;
+  color: var(--grey-text);
   margin-bottom: 6px;
 }
 
@@ -137,7 +138,7 @@ span {
 }
 
 .btn:hover {
-  background: #1c3879;
+  background: var(--accent-color);
 }
 
 /* FORMS - CREATE PROFILE ************************************ */
@@ -170,9 +171,9 @@ span {
   justify-content: space-between;
   gap: 2rem;
   background-color: var(--main-theme-color);
-  color: #444;
+  color: var(--grey-text);
   padding: 10px;
-  font: #444;
+  font: var(--grey-text);
 }
 
 a:link,
@@ -192,7 +193,7 @@ a:active {
 .register-link:visited {
   text-decoration: none;
   font-size: 12px;
-  color: #444;
+  color: var(--grey-text);
   transition: all 0.3s;
 }
 

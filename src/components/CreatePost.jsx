@@ -10,6 +10,7 @@ function CreatePost() {
     const value = e.target.value;
     const userId = localStorage.getItem("id");
 
+    // unpack previous values into a copy and update; return the copy
     setFormData((values) => ({ ...values, [name]: value }));
     setFormData((values) => ({ ...values, userId: userId }));
   };

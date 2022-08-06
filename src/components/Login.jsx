@@ -5,6 +5,7 @@ import "../styles.css";
 
 function Login({ setLoggedInUser }) {
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -42,7 +43,9 @@ function Login({ setLoggedInUser }) {
       // navigate("/SingleProfileView", { state: data });
       navigate("/SingleProfileView");
     } else if (data === "Invalid credentials") {
-      alert("Please enter a valid email and password :-)");
+      setFormData("");
+      setError(true);
+      // alert("Please enter a valid email and password :-)");
     }
   };
 
@@ -81,6 +84,9 @@ function Login({ setLoggedInUser }) {
           <a className="register-link" href="/Register">
             First time user? Sign up here
           </a>
+          {error && (
+            <p className="error">Login details incorrect, please try again!</p>
+          )}
         </span>
       </form>
     </div>

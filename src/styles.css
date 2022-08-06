@@ -10,6 +10,13 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* GENERAL ************************************ */
+
+.error {
+  margin-top: 12px;
+  font-size: 18px;
+}
+
 /* HEADER ************************************ */
 
 .header {
@@ -100,14 +107,13 @@ span {
 
 /* FOOTER ************************************ */
 
- .footer{
+.footer {
   position: absolute;
   margin-top: -0px;
   width: 100%;
   text-align: center;
   border-radius: 5px;
 }
- 
 
 .footer-links-container {
   display: flex;
@@ -145,29 +151,28 @@ a:active {
   color: #fff;
 }
 
-.test-container{
+.test-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
   align-items: center;
+}
 
-}   
-
-.img{
+.img {
   width: 100%;
   width: 60px;
   height: 60px;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.Picture{
+.Picture {
   text-align: center;
   transition: 0.3s;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 2px 16px;
   border-radius: 5px;
 }
 
-.Directory{
+.Directory {
   text-align: center;
 }

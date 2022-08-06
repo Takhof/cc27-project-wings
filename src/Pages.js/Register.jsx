@@ -20,30 +20,31 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      setError(true);
+    } else {
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+      const options = {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
 
-    const res = await fetch("/users/save", options);
-    const data = await res.json();
+      const res = await fetch("/users/save", options);
+      const data = await res.json();
 
-    console.log("Data from Server", data);
+      console.log("Data from Server", data);
 
-    if (data !== "") {
-      // reset local storage for new login
-      localStorage.clear();
+      if (data !== "") {
+        // set local storage with user id & email
+        localStorage.setItem("id", data.user_id);
+        localStorage.setItem("email", data.email);
 
-      // set local storage with user id & email
-      localStorage.setItem("id", data.user_id);
-      localStorage.setItem("email", data.email);
-
-      // redirect
-      navigate("/CreateEditProfile");
+        // redirect
+        navigate("/CreateEditProfile");
+      }
     }
   };
   return (
@@ -80,8 +81,8 @@ function Register() {
           <input
             className="form-input"
             type="password"
-            name="password"
-            value={formData.password || ""}
+            name="confirmPassword"
+            value={formData.confirmPassword || ""}
             onChange={handleChange}
             required
           />
@@ -90,6 +91,9 @@ function Register() {
             <a className="register-link" href="/">
               Already have an account? Click here to login
             </a>
+            {error && (
+            <p className="error">Passwords don't match!</p>
+          )}
           </span>
         </form>
       </div>

@@ -2,8 +2,7 @@ import React from "react";
 import "../styles.css";
 
 function ProfileSummary({ userId, photoURL, fullName, cohort }) {
-  if (!cohort) cohort = "";
-  if (cohort) cohort = "CC" + cohort;
+  const cohortAdj = cohort ? "CC" + cohort : "";
 
   return (
     <div>
@@ -13,7 +12,7 @@ function ProfileSummary({ userId, photoURL, fullName, cohort }) {
         </a>
         <div className="profile-text-container">
           <h3 className="profile-name">{fullName}</h3>
-          <h4 className="profile-cohort">{cohort || ""}</h4>
+          <h4 className="profile-cohort">{cohortAdj}</h4>
         </div>
       </div>
     </div>

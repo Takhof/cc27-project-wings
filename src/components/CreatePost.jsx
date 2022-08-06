@@ -18,9 +18,6 @@ function CreatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // add userId
-    console.log("formData INCLUDING ID?:", formData);
-
     const options = {
       method: "POST",
       body: JSON.stringify(formData),
@@ -32,7 +29,7 @@ function CreatePost() {
     const res = await fetch("/posts/save", options);
     const data = await res.json();
 
-    console.log("Data from Server", data);
+    setFormData("");
   };
 
   return (

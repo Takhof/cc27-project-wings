@@ -4,43 +4,43 @@ import ProfileSummary from "../components/ProfileSummary";
 import Footer from "../components/Footer";
 
 function Directory() {
-	const [profiles, setProfiles] = useState("");
+  const [profiles, setProfiles] = useState("");
 
-	const getProfilesData = async () => {
-		const res = await fetch(`/profiles`, { method: "GET" });
-		const data = await res.json();
+  const getProfilesData = async () => {
+    const res = await fetch(`/profiles`, { method: "GET" });
+    const data = await res.json();
 
-		setProfiles(data);
-		console.log("profiles: ", profiles);
-	};
+    setProfiles(data);
+    console.log("profiles: ", profiles);
+  };
 
-	useEffect(() => {
-		getProfilesData();
-	}, []);
+  useEffect(() => {
+    getProfilesData();
+  }, []);
 
-	return (
-		<div>
-			<Header />
-			<h2 className="Directory">CC Student and Alumni Directory </h2>
-			<div>
-				{profiles && (
-					<div className="test-container">
-						{profiles.map((profile) => {
-							return (
-								<ProfileSummary
-									userId={profile.userId}
-									photoURL={profile.photoURL}
-									fullName={profile.fullName}
-									cohort={profile.cohort}
-								/>
-							);
-						})}
-					</div>
-				)}
-			</div>
-			<Footer />
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      <h2 className="directory-header">Welcome to the Club:</h2>
+      <div>
+        {profiles && (
+          <div className="directory-container">
+            {profiles.map((profile) => {
+              return (
+                <ProfileSummary
+                  userId={profile.userId}
+                  photoURL={profile.photoURL}
+                  fullName={profile.fullName}
+                  cohort={profile.cohort}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default Directory;

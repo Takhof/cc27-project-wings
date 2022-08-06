@@ -30,7 +30,6 @@ function Login({ setLoggedInUser }) {
     const res = await fetch("/users/login", options);
     const data = await res.json();
 
-    console.log("Data from Server", data);
     setLoggedInUser(data);
 
     if (data !== "" && data !== "Invalid credentials") {

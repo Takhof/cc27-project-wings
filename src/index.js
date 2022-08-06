@@ -11,17 +11,17 @@ import Contact from "./Pages.js/Contact";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<App />} />
-				<Route path="/login" element={<Login />} />
-				<Route path="/Register" element={<Register />} />
-				<Route path="/CreateEditProfile" element={<CreateEditProfile />} />
-				<Route path="/Directory" element={<Directory />} />
-				<Route path="/SingleProfileView" element={<SingleProfileView />} />				
-				<Route path="/Contact" element={<Contact />} />
-			</Routes>
-		</BrowserRouter>
-	</React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/CreateEditProfile" element={<CreateEditProfile />} />
+        <Route path="/Directory" element={<Directory />} />
+        <Route path="/SingleProfileView" element={<SingleProfileView />} />
+        <Route path="/Contact" element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );

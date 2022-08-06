@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
 
 function Login({ setLoggedInUser }) {
@@ -29,6 +29,10 @@ function Login({ setLoggedInUser }) {
 
     console.log("Data from Server", data);
     setLoggedInUser(data);
+
+    if (data !== "" && data !== "Invalid credentials") {
+      navigate("/SingleProfileView");
+    }
   };
 
   return (

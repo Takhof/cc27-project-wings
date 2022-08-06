@@ -36,6 +36,7 @@ function Login({ setLoggedInUser }) {
 
       // set local storage with user id
       localStorage.setItem("id", data.id);
+      localStorage.setItem("email", data.email);
 
       // redirect, with optional parameter for passing data via useLocation
       // navigate("/SingleProfileView", { state: data });

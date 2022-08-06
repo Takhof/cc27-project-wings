@@ -5,6 +5,9 @@ import Footer from "../components/Footer";
 import "../styles.css";
 
 function Register() {
+  // clear localStorage on page load
+  localStorage.clear();
+
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();

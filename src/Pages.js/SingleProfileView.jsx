@@ -6,12 +6,16 @@ import Newsfeed from "../components/Newsfeed";
 import Footer from "../components/Footer";
 
 function SingleProfileView() {
+  // Get userId from querystring
+  const queryParams = new URLSearchParams(window.location.search);
+  let userId = queryParams.get('user_id');
+
 	return (
 		<div>
 			<div>
 			<Header />
 			<h2>Single Profile View </h2>
-      <Profile />
+      <Profile userId={userId}/>
       <CreatePost />
       <Newsfeed />
 			<Footer />

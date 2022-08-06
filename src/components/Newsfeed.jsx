@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Post from "./Post";
 
 function Newsfeed() {
@@ -9,13 +9,15 @@ function Newsfeed() {
     const data = await res.json();
     setPosts(data);
   };
+
+  useEffect(() => {
+    fetchResponse();
+  }, [posts]);
+
   return (
     <div>
       <h3>Newsfeed Component</h3>
       <div>
-        <button className="btn" onClick={fetchResponse}>
-          Load posts
-        </button>
         {posts && (
           <div>
             {posts.map((post) => {

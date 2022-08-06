@@ -5,18 +5,19 @@ import Moment from "moment";
 function Post({ userId, profilePhoto, fullName, text, date }) {
   const formatDate = Moment(date).fromNow();
   return (
-    <div>
-      <div>
-        <div className="profile">
+    <div className="post-container">
+      <div className="post-flex-container">
+        <div className="post-img-container">
           <a href={"/SingleProfileView?user_id=" + userId}>
-            <img className="img1" src={profilePhoto}></img>
+            <img className="post-img" src={profilePhoto}></img>
           </a>
-          <h3 className="fullname">{fullName}</h3>
-          <div className="dater">{formatDate}</div>
         </div>
-
-        <div className="about">{text}</div>
+        <div className="post-text-container">
+          <h3 className="fullname">{fullName}</h3>
+          <div>{text}</div>
+        </div>
       </div>
+      <p className="post-timestamp">{formatDate}</p>
     </div>
   );
 }

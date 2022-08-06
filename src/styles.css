@@ -81,7 +81,51 @@ body {
   color: var(--grey-text);
 }
 
-/* NEWSFEED  *********************** */
+/* NEWSFEED & POST *********************** */
+
+.newsfeed-container {
+  padding: 32px;
+  min-height: 600px;
+}
+
+.newsfeed-header {
+  font-size: 24px;
+  color: var(--grey-text);
+  margin-bottom: 32px;
+}
+
+.post-container {
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 2px solid #444;
+  border-radius: 5px;
+}
+
+.post-flex-container {
+  display: flex;
+  gap: 18px;
+}
+
+.post-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* Newsfeed ************************************ */
+
+.newsfeed {
+  text-align: center;
+}
+
+.createpost {
+  text-align: center;
+}
+
+.post-timestamp {
+  text-align: right;
+  color: var(--grey-text);
+}
 
 /* FORMS ************************************ */
 
@@ -251,40 +295,4 @@ a:active {
 
 .Directory {
   text-align: center;
-}
-
-/* Newsfeed ************************************ */
-.profile {
-  display: flex;
-  align-items: center;
-}
-.newsfeed {
-  text-align: center;
-}
-
-.createpost {
-  text-align: center;
-}
-
-.img1 {
-  width: 50px;
-  height: 60px;
-  margin-left: 0;
-  margin-right: auto;
-  display: block;
-  transition: 0.3s;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-}
-
-.about {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px; /* 5px rounded corners */
-  margin-left: auto;
-}
-
-.dater {
-  text-align: center;
-  color: #1c3879;
 }

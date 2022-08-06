@@ -35,6 +35,39 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
+.profile-container {
+  padding: 32px;
+  min-height: 600px;
+}
+
+.profile-header {
+  font-size: 24px;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.profile-img-container {
+  margin-bottom: 32px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border: 5px solid #607eaa;
+  border-radius: 50%;
+}
+
+.profile-content {
+  margin-bottom: 12px;
+}
+
+.profile-content-title {
+  font-size: 16px;
+  font-weight: bolder;
+  color: #444;
+  margin-bottom: 6px;
+}
+
 /* FORMS ************************************ */
 
 .form-container {
@@ -186,57 +219,57 @@ a:active {
 
 /* Directory ************************************ */
 
-.img{
+.img {
   width: 100%;
   width: 60px;
   height: 60px;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.Picture{
+.Picture {
   text-align: center;
   transition: 0.3s;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 2px 16px;
   border-radius: 5px;
 }
 
-.Directory{
+.Directory {
   text-align: center;
 }
 
 /* Newsfeed ************************************ */
-.profile{
+.profile {
   display: flex;
   align-items: center;
 }
-.newsfeed{
+.newsfeed {
   text-align: center;
 }
 
-.createpost{
+.createpost {
   text-align: center;
 }
 
-.img1{
+.img1 {
   width: 50px;
   height: 60px;
-  margin-left:0;
+  margin-left: 0;
   margin-right: auto;
-  display:block;
+  display: block;
   transition: 0.3s;
-  box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
 }
 
-.about{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.about {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   border-radius: 5px; /* 5px rounded corners */
   margin-left: auto;
 }
 
-.dater{
+.dater {
   text-align: center;
   color: #1c3879;
 }

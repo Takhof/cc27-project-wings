@@ -19,17 +19,41 @@ function Profile(userId) {
   }, []);
 
   return (
-    <div>
-      <h3>Profile</h3>
+    <div className="profile-container">
+      <h3 className="profile-header">Profile:</h3>
       {profile && (
         <div>
-          <img src={profile.photoURL} alt="profile"></img>
-          <p>Name: {profile.fullName}</p>
-          <p>Email: {profile.email}</p>
-          <p>About: {profile.about}</p>
-          <p>Linkedin URL: {profile.linkedIn}</p>
-          <p>Twitter Handle: {profile.twitter}</p>
-          <p>CC Cohort: {profile.cohort && "CC" + profile.cohort}</p>
+          <div className="profile-img-container">
+            <img
+              className="profile-img"
+              src={profile.photoURL}
+              alt="profile"
+            ></img>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">Name:</p>
+            <p>{profile.fullName}</p>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">Email:</p>
+            <p>{profile.email}</p>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">About:</p>
+            <p>{profile.about}</p>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">Linkedin URL:</p>
+            <p>{profile.linkedIn}</p>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">Twitter Handle:</p>
+            <p>{profile.twitter}</p>
+          </div>
+          <div className="profile-content">
+            <p className="profile-content-title">CC Cohort:</p>
+            <p>{profile.cohort && "CC" + profile.cohort}</p>
+          </div>
         </div>
       )}
     </div>

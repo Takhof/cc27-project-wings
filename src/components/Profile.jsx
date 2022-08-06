@@ -20,7 +20,7 @@ function Profile(userId) {
       <h3>Profile</h3>
 			{profile && (
 				<div>
-					<img src={profile.photoURL}></img>
+					<img src={profile.photoURL} alt="profile"></img>
 					<p>Name: <span>{profile.fullName}</span></p>
 					<p>Email: <span>{profile.email}</span></p>
 					<p>About: <span>{profile.about}</span></p>
@@ -28,7 +28,7 @@ function Profile(userId) {
 					<p>Twitter Handle: <span>{profile.twitter}</span></p>
 					<p>CC Cohort: <span>{profile.cohort && "CC" + profile.cohort}</span></p>
 				</div>
-			)};
+			)}
 		</div>
 	);
 }

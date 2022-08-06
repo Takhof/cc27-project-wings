@@ -41,6 +41,8 @@ function Login({ setLoggedInUser }) {
       // redirect, with optional parameter for passing data via useLocation
       // navigate("/SingleProfileView", { state: data });
       navigate("/SingleProfileView");
+    } else if (data === "Invalid credentials") {
+      alert("Please enter a valid email and password :-)");
     }
   };
 

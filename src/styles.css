@@ -28,6 +28,13 @@ body {
   padding: 24px;
 }
 
+/* SPV AND CONTAINED COMPONENTS *********************** */
+
+.spv-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 /* FORMS ************************************ */
 
 .form-container {

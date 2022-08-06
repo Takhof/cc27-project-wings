@@ -20,10 +20,13 @@ function SingleProfileView() {
     <div>
       <div>
         <Header />
-        <h2>Single Profile View </h2>
-        <Profile userId={userId} />
-        <CreatePost />
-        <Newsfeed />
+        <div className="spv-container">
+          <Profile userId={userId} />
+          <div className="newsfeed-container">
+            <CreatePost />
+            <Newsfeed />
+          </div>
+        </div>
         <Footer />
       </div>
     </div>

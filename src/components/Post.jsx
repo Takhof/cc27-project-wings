@@ -3,7 +3,7 @@ import "../styles.css";
 import Moment from "moment";
 
 function Post({ userId, profilePhoto, fullName, text, date }) {
-  const formatDate = Moment().format("DD-MM-YYYY");
+  const formatDate = Moment(date).fromNow();
   return (
     <div>
       <div>

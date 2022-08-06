@@ -5,6 +5,7 @@ import "../styles.css";
 
 function Login({ setLoggedInUser }) {
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -31,15 +32,17 @@ function Login({ setLoggedInUser }) {
     setLoggedInUser(data);
 
     if (data !== "" && data !== "Invalid credentials") {
-      // reset local storage
+      // reset local storage for new login
       localStorage.clear();
 
-      // set local storage with user id
+      // set local storage with user id & email
       localStorage.setItem("id", data.id);
+      localStorage.setItem("email", data.email);
 
-      // redirect, with optional parameter for passing data via useLocation
-      // navigate("/SingleProfileView", { state: data });
       navigate("/SingleProfileView");
+    } else if (data === "Invalid credentials") {
+      setFormData("");
+      setError(true);
     }
   };
 
@@ -78,6 +81,9 @@ function Login({ setLoggedInUser }) {
           <a className="register-link" href="/Register">
             First time user? Sign up here
           </a>
+          {error && (
+            <p className="error">Login details incorrect, please try again!</p>
+          )}
         </span>
       </form>
     </div>

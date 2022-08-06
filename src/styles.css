@@ -100,11 +100,14 @@ span {
 
 /* FOOTER ************************************ */
 
-.footer {
+ .footer{
   position: absolute;
-  bottom: 0;
+  margin-top: -0px;
   width: 100%;
+  text-align: center;
+  border-radius: 5px;
 }
+ 
 
 .footer-links-container {
   display: flex;
@@ -112,7 +115,7 @@ span {
   gap: 2.4rem;
   background-color: #607eaa;
   color: #444;
-  padding: 24px;
+  padding: 10px;
   font: #444;
 }
 
@@ -142,58 +145,16 @@ a:active {
   color: #fff;
 }
 
-/*
-.btn {
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  color: #fff;
-  background: #607eaa;
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 5px;
-  margin-top: 10px;
-  box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
-}
-
-.test-container {
-  margin-top: 24px;
-  width: 100%;
+.test-container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 12px;
-  row-gap: 24px;
-}
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 5vw); */
+  grid-gap: 40px;
+  align-items: center;
 
-.user-card {
-  border: 2px solid #444;
-  border-radius: 5px;
-  padding: 32px;
-}
+}   
 
-.email {
-  color: #444;
-  margin-bottom: 12px;
-}
 
-.whole{
-  text-align: center;
-}
-.links{
-  flex: 1 1 150px;
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
- 
-}
-.linkers{
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
-}
-.pass{
-  display: flex;
-  flex-direction: column;
-  
-}
-*/ ;
+
+
+

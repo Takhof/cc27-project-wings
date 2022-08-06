@@ -4,19 +4,21 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function CreateEditProfile() {
-
-  // set local storage with user id & email
-  //localStorage.setItem("id", data.user_id);
-  //localStorage.setItem("email", data.email);
-
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  // hidden state to pass in with form data
+  const loggedInUserId = localStorage.getItem("id");
+  const loggedInUserEmail = localStorage.getItem("email");
+  const photoURL = `images/butterfly${Math.floor((Math.random() * 5) + 1)}.png`
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
+
     setFormData((values) => ({ ...values, [name]: value }));
+    setFormData((values) => ({ ...values, id: loggedInUserId, email: loggedInUserEmail, photoURL: photoURL}));
   };
 
   const handleSubmit = async (e) => {
@@ -39,7 +41,7 @@ function CreateEditProfile() {
 
 		if (data !== "") {
       // redirect
-      navigate("/SingleProfileV");
+      navigate("/SingleProfileView");
     } 
 
   };
@@ -50,17 +52,6 @@ function CreateEditProfile() {
         <form className="create-profile-form" onSubmit={handleSubmit}>
           <h2 className="form-header">Create | Edit </h2>
           <div>
-            <label className="form-label" htmlFor="email">
-              Email:<span>*</span>{" "}
-            </label>
-            <input
-              className="form-input"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
             <label className="form-label" htmlFor="fullName">
               Full Name:<span>*</span>{" "}
             </label>
@@ -72,19 +63,8 @@ function CreateEditProfile() {
               onChange={handleChange}
               required
             />
-            <label className="form-label" htmlFor="id">
-              ID:{" "}
-            </label>
-            <input
-              className="form-input"
-              type="text"
-              name="id"
-              value={formData.id}
-              onChange={handleChange}
-              required
-            />
             <label className="form-label" htmlFor="about">
-              About:{" "}
+              About:<span>*</span>{" "}
             </label>
             <input
               className="form-input"
@@ -105,7 +85,6 @@ function CreateEditProfile() {
               name="linkedIn"
               value={formData.linkedIn || ""}
               onChange={handleChange}
-              required
             />
             <label className="form-label" htmlFor="twitter">
               Twitter:{" "}
@@ -116,19 +95,45 @@ function CreateEditProfile() {
               name="twitter"
               value={formData.twitter || ""}
               onChange={handleChange}
-              required
             />
             <label className="form-label" htmlFor="cohort">
               CC Cohort:{" "}
             </label>
-            <input
+            <select               
               className="form-input"
-              type="text"
               name="cohort"
               value={formData.cohort || ""}
-              onChange={handleChange}
-              required
-            />
+              onChange={handleChange}>
+              <option value="28">CC28</option>
+              <option value="27">CC27</option>
+              <option value="26">CC26</option>
+              <option value="25">CC25</option>
+              <option value="24">CC24</option>
+              <option value="23">CC23</option>
+              <option value="22">CC22</option>
+              <option value="21">CC21</option>
+              <option value="20">CC20</option>
+              <option value="19">CC19</option>
+              <option value="18">CC18</option>
+              <option value="17">CC17</option>
+              <option value="16">CC16</option>
+              <option value="15">CC15</option>
+              <option value="14">CC14</option>
+              <option value="13">CC13</option>
+              <option value="12">CC12</option>
+              <option value="11">CC11</option>
+              <option value="10">CC10</option>
+              <option value="9">CC9</option>
+              <option value="8">CC8</option>
+              <option value="7">CC7</option>
+              <option value="6">CC6</option>
+              <option value="5">CC5</option>
+              <option value="4">CC4</option>
+              <option value="3">CC3</option>
+              <option value="2">CC2</option>
+              <option value="1">CC1</option>
+            </select>
+
             <input className="btn profile-btn" type="submit" />
           </div>
         </form>

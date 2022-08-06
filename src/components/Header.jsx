@@ -6,7 +6,9 @@ function Header() {
 
   return (
     <header className="header">
-      <h1 className="header-title">Wings 🦋</h1>
+      <a href="/">
+        <h1 className="header-title">Wings 🦋</h1>
+      </a>
       {email && <p>Welcome Back, {email}</p>}
     </header>
   );

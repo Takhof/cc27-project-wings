@@ -364,10 +364,6 @@ a:active {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.Picture {
+.contact {
   text-align: center;
-  transition: 0.3s;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.2);
-  padding: 2px 16px;
-  border-radius: 5px;
 }

@@ -1,29 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProfileSummary from "../components/ProfileSummary";
 import Footer from "../components/Footer";
 
 function Directory() {
-	const URL = "http://localhost:3030";
 	const [profiles, setProfiles] = useState("");
 
-	// TESTING DATA FROM BACKEND
-	const fetchResponse = async (e) => {
-		const res = await fetch(`${URL}/profiles`, { method: "GET" });
+	const getProfilesData = async () => {
+		const res = await fetch(`/profiles`, { method: "GET" });
 		const data = await res.json();
+
 		setProfiles(data);
-		// TESTING
 		console.log("profiles: ", profiles);
 	};
+
+	useEffect(() => {
+		getProfilesData();
+	}, []);
 
 	return (
 		<div>
 			<Header />
-			<h2 className="Directory">Directory </h2>
+			<h2 className="Directory">CC Student and Alumni Directory </h2>
 			<div>
-				<button className="btn" onClick={fetchResponse}>
-					Load profile directory
-				</button>
 				{profiles && (
 					<div className="test-container">
 						{profiles.map((profile) => {

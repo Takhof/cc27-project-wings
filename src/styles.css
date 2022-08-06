@@ -132,6 +132,10 @@ body {
   box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
 }
 
+.create-post-btn:hover {
+  background: var(--accent-color);
+}
+
 /* POST *********************** */
 
 .posts-main-container {

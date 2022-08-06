@@ -10,7 +10,7 @@ function ProfileSummary({ userId, photoURL, fullName, cohort }) {
         </a>
         <div className="profile-text-container">
           <h3 className="profile-name">{fullName}</h3>
-          <h4 className="profile-cohort">CC{cohort}</h4>
+          <h4 className="profile-cohort">CC{cohort || "007"}</h4>
         </div>
       </div>
     </div>

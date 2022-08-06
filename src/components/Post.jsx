@@ -13,8 +13,8 @@ function Post({ userId, profilePhoto, fullName, text, date }) {
           </a>
         </div>
         <div className="post-text-container">
-          <h3 className="fullname">{fullName}</h3>
-          <div>{text}</div>
+          <h3 className="post-name">{fullName}</h3>
+          <div className="post-text">{text}</div>
         </div>
       </div>
       <p className="post-timestamp">{formatDate}</p>

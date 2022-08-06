@@ -5,7 +5,7 @@ const USERS_TABLE = "users";
 module.exports = {
   create: function (user) {
     return knex(USERS_TABLE)
-      .insert(user, ["user_id"])
+      .insert(user, ["user_id", "email"])
       .then((res) => res[0]);
   },
 

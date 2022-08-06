@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useState } from "react";
 import "../styles.css";
 
-const URL = "http://localhost:3030";
 function Register() {
 	const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
 	const handleChange = (e) => {
 		const name = e.target.name;
@@ -25,10 +26,22 @@ function Register() {
 			},
 		};
 
-		const res = await fetch(`${URL}/users/save`, options);
+		const res = await fetch("/users/save", options);
 		const data = await res.json();
+
 		console.log("Data from Server", data);
-		// TODO Redirect user to profile creation page
+
+		if (data !== "") {
+      // reset local storage for new login
+      localStorage.clear();
+
+      // set local storage with user id & email
+      localStorage.setItem("id", data.user_id);
+      localStorage.setItem("email", data.email);
+
+      // redirect
+      navigate("/CreateEditProfile");
+    } 
 	};
 	return (
 		<div>

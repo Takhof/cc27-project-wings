@@ -31,7 +31,15 @@ function Login({ setLoggedInUser }) {
     setLoggedInUser(data);
 
     if (data !== "" && data !== "Invalid credentials") {
-      navigate("/SingleProfileView", { state: data });
+      // reset local storage
+      localStorage.clear();
+
+      // set local storage with user id
+      localStorage.setItem("id", data.id);
+
+      // redirect, with optional parameter for passing data via useLocation
+      // navigate("/SingleProfileView", { state: data });
+      navigate("/SingleProfileView");
     }
   };
 

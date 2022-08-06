@@ -4,11 +4,17 @@ import Profile from "../components/Profile";
 import CreatePost from "../components/CreatePost";
 import Newsfeed from "../components/Newsfeed";
 import Footer from "../components/Footer";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 function SingleProfileView() {
-  const location = useLocation();
-  console.log("ID FROM LOGIN PAGE", location.state.email);
+  // for catching data passed in via navigate, if applicable
+  // const location = useLocation();
+  // console.log("ID FROM LOGIN PAGE", location.state.id);
+
+  // access local storage, set in Login
+  const userID = localStorage.getItem("id");
+  console.log("USER ID FROM LOCAL STORAGE: ", userID);
+
   // Get userId from querystring
   const queryParams = new URLSearchParams(window.location.search);
   let userId = queryParams.get("user_id");

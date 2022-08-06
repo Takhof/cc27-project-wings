@@ -1,12 +1,17 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const URL = "http://localhost:3030";
-
 function CreateEditProfile() {
+
+  // set local storage with user id & email
+  //localStorage.setItem("id", data.user_id);
+  //localStorage.setItem("email", data.email);
+
   const [formData, setFormData] = useState({});
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -27,10 +32,16 @@ function CreateEditProfile() {
       },
     };
 
-    const res = await fetch(`${URL}/profiles/save`, options);
+    const res = await fetch(`/profiles/save`, options);
     const data = await res.json();
 
     console.log("Data from Server", data);
+
+		if (data !== "") {
+      // redirect
+      navigate("/SingleProfileV");
+    } 
+
   };
   return (
     <div>

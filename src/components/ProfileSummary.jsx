@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles.css";
 
-function ProfileSummary({ userId, photoURL, fullName, cohort }) {
-  const cohortAdj = cohort ? "CC" + cohort : "";
+function ProfileSummary({ userId, photoURL, fullName, about, cohort }) {
+  const cohortAdj = cohort ? "CC" + cohort : "Teacher";
 
   return (
     <div>
@@ -12,9 +12,10 @@ function ProfileSummary({ userId, photoURL, fullName, cohort }) {
         </a>
         <div className="profile-text-container">
           <h3 className="profile-name">{fullName}</h3>
-          <h4 className="profile-cohort">{cohortAdj}</h4>
+          <p className="profile-about">{about}</p>
         </div>
       </div>
+      <h4 className="profile-cohort">{cohortAdj}</h4>
     </div>
   );
 }

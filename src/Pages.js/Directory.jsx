@@ -11,7 +11,7 @@ function Directory() {
     const data = await res.json();
 
     setProfiles(data);
-    console.log("profiles: ", profiles);
+    console.log("profiles: ", data);
   };
 
   useEffect(() => {
@@ -31,6 +31,7 @@ function Directory() {
                   userId={profile.userId}
                   photoURL={profile.photoURL}
                   fullName={profile.fullName}
+                  about={profile.about}
                   cohort={profile.cohort}
                 />
               );

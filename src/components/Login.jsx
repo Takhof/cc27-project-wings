@@ -14,6 +14,10 @@ function Login({ setLoggedInUser }) {
     navigate("/Register");
   };
 
+  const handleLink = (e) => {
+    navigate("/Register");
+  };
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;

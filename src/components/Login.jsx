@@ -87,7 +87,7 @@ function Login({ setLoggedInUser }) {
         </div>
         <input className="btn" type="submit" />
         <span className="links">
-          <a className="register-link" href="" onClick={handleLink}>
+          <a className="register-link" onClick={handleLink}>
             First time user? Sign up here
           </a>
           {error && (

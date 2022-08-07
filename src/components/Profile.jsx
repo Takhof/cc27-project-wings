@@ -44,11 +44,11 @@ function Profile({userId}) {
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Linkedin URL:</p>
-            <p className="profile-content-text">{profile.linkedIn}</p>
+            <p className="profile-content-text"><a href={profile.linkedIn}>{profile.linkedIn}</a></p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Twitter Handle:</p>
-            <p className="profile-content-text">{profile.twitter}</p>
+            <p className="profile-content-text"><a href={"https://twitter.com/" + profile.twitter}> {profile.twitter} </a></p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">CC Cohort:</p>

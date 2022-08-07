@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node ./src/server.js",
-    "heroku-postbuild": "npm install && npm run build && npm run server",
+    "heroku-postbuild": "npm install && npm run build",
     "knex": "knex",
     "migrate-latest": "npx knex migrate:latest --knexfile ./knexfile.js",
     "migrate-down": "npx knex migrate:down --knexfile ./knexfile.js",

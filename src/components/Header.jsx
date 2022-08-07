@@ -1,16 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
 import LogOut from "./Logout";
 
 function Header() {
   const email = localStorage.getItem("email");
+  const navigate = useNavigate();
+
+  const handleLink = (e) => {
+    navigate("/Directory");
+  };
 
   return (
     <header className="header">
-      <a href="/">
-        <h1 className="header-title">Wings 🦋</h1>
-      </a>
-      <a className="Directory-link" href="/Directory">
+      <h1 className="header-title">Wings 🦋</h1>
+      <a className="directory-link" onClick={handleLink}>
         Directory
       </a>
       <div>

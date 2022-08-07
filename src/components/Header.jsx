@@ -11,7 +11,9 @@ function Header() {
       </a>
       {email && <p>Welcome Back, {email}</p>}
       <div>
-        <a className="Directory-link"></a>
+        <a className="Directory-link" href="/Directory">
+          Directory
+        </a>
       </div>
     </header>
   );

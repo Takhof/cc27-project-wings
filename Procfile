@@ -1,3 +1,3 @@
 # for HEROKU
-release: npm run migrate-latest && npm run seed-data && npm run server
+release: npm run migrate-latest && npm run seed-data
 web: npm start

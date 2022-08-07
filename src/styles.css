@@ -333,7 +333,7 @@ span {
   text-align: center;
   border-radius: 5px;
 }
-
+.Directory-link,
 .footer-links-container {
   display: flex;
   justify-content: space-between;
@@ -351,11 +351,6 @@ a:visited {
   color: #fff;
   transition: all 0.3s;
 }
-
-/* a:hover,
-a:active {
-  color: var(--accent-color);
-} */
 
 .register-link:link,
 .register-link:visited {

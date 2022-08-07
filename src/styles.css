@@ -23,6 +23,10 @@ body {
   font-size: 18px;
 }
 
+a {
+  cursor: pointer;
+}
+
 /* HEADER ************************************ */
 
 .header {
@@ -192,7 +196,7 @@ body {
 }
 
 /* DIRECTORY ************************************ */
-.directory-link{
+.directory-link {
   font-size: 40px;
 }
 
@@ -336,9 +340,9 @@ span {
   text-align: center;
   border-radius: 5px;
 }
-.Log_out{
+.Log_out {
   background-color: #607eaa;
-  color:white;
+  color: white;
   border-radius: 5px;
 }
 .footer-links-container {

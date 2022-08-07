@@ -345,8 +345,9 @@ span {
   border-radius: 5px;
 }
 .Log_out {
-  background-color: #607eaa;
-  color: white;
+  display: block;
+  margin-bottom: 24px;
+  color: var(--main-theme-color);
   border-radius: 5px;
 }
 .footer-links-container {

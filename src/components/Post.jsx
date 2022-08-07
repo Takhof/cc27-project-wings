@@ -18,7 +18,7 @@ function Post({ userId, profilePhoto, fullName, text, date }) {
     <div className="post-container">
       <div className="post-flex-container">
         <div className="post-img-container">
-          <a href="" onClick={handleLink}>
+          <a onClick={handleLink}>
             <img className="post-img" src={profilePhoto}></img>
           </a>
         </div>

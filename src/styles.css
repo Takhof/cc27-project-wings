@@ -333,8 +333,13 @@ span {
   text-align: center;
   border-radius: 5px;
 }
-.Directory-link,
+.Log_out{
+  background-color: #607eaa;
+  color:white;
+  border-radius: 5px;
+}
 .footer-links-container {
+  text-align: right;
   display: flex;
   justify-content: space-between;
   gap: 2rem;

@@ -29,6 +29,7 @@ function Login({ setLoggedInUser }) {
 
     const res = await fetch("/users/login", options);
     const data = await res.json();
+    console.log("RESPONSE FROM SERVER: ", data);
 
     setLoggedInUser(data);
 

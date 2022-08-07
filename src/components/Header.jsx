@@ -10,6 +10,9 @@ function Header() {
         <h1 className="header-title">Wings 🦋</h1>
       </a>
       {email && <p>Welcome Back, {email}</p>}
+      <div>
+        <a className="Directory-link"></a>
+      </div>
     </header>
   );
 }

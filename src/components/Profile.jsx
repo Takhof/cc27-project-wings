@@ -10,6 +10,11 @@ function Profile({ userId }) {
     navigate("/Directory");
   };
 
+  let logout = () => {
+    localStorage.clear();
+    window.location.href = "/";
+  };
+
   const getProfileData = async () => {
     const res = await fetch(`/profiles/view/${userId}`, {
       method: "GET",
@@ -29,6 +34,9 @@ function Profile({ userId }) {
       <h3 className="profile-header">Profile:</h3>
       <a className="directory-link" onClick={handleLink}>
         Directory
+      </a>
+      <a className="Log_out" onClick={logout}>
+        Logout
       </a>
       {profile && (
         <div>

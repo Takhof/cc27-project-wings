@@ -198,7 +198,10 @@ a {
 /* DIRECTORY ************************************ */
 
 .directory-link {
-  font-size: 40px;
+  color: var(--main-theme-color);
+  display: block;
+  font-size: 24px;
+  margin-bottom: 24px;
 }
 
 .directory-header {

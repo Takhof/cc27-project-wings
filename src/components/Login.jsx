@@ -10,6 +10,10 @@ function Login({ setLoggedInUser }) {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  const handleLink = (e) => {
+    navigate("/Register");
+  };
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -83,7 +87,7 @@ function Login({ setLoggedInUser }) {
         </div>
         <input className="btn" type="submit" />
         <span className="links">
-          <a className="register-link" href="/Register">
+          <a className="register-link" href="" onClick={handleLink}>
             First time user? Sign up here
           </a>
           {error && (

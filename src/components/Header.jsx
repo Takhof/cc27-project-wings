@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles.css";
+import LogOut from "./Logout";
 
 function Header() {
   const email = localStorage.getItem("email");
@@ -9,11 +10,13 @@ function Header() {
       <a href="/">
         <h1 className="header-title">Wings 🦋</h1>
       </a>
-      {email && <p>Welcome Back, {email}</p>}
+      <a className="Directory-link" href="/Directory">
+        Directory
+      </a>
       <div>
-        <a className="Directory-link" href="/Directory">
-          Directory
-        </a>
+        {email && <p>Welcome Back, {email}</p>}
+
+        <LogOut />
       </div>
     </header>
   );

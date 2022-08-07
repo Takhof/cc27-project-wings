@@ -27,7 +27,6 @@ function SingleProfileView() {
             <Newsfeed />
           </div>
         </div>
-        <Footer />
       </div>
     </div>
   );

@@ -10,8 +10,6 @@ function Contact() {
         <h2>Contact Us</h2>
         <p>Number:0923-333908-24483</p>
         <p>Email: dave@dave-mail.dave</p>
-
-        <Footer />
       </div>
     </div>
   );

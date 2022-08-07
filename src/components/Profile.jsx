@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ userId }) {
   const [profile, setProfile] = useState();
+  const navigate = useNavigate();
+
+  const handleLink = (e) => {
+    navigate("/Directory");
+  };
 
   const getProfileData = async () => {
     const res = await fetch(`/profiles/view/${userId}`, {
@@ -21,6 +27,9 @@ function Profile({ userId }) {
   return (
     <div className="profile-container">
       <h3 className="profile-header">Profile:</h3>
+      <a className="directory-link" onClick={handleLink}>
+        Directory
+      </a>
       {profile && (
         <div>
           <div className="profile-img-container">

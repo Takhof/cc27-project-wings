@@ -8,15 +8,17 @@ function Post({ userId, profilePhoto, fullName, text, date }) {
 
   const formatDate = Moment(date).fromNow();
 
+  const navString = "/SingleProfileView?user_id=" + userId;
+
   const handleLink = (e) => {
-    navigate("/SingleProfileView?user_id=" + userId);
+    navigate(navString);
   };
 
   return (
     <div className="post-container">
       <div className="post-flex-container">
         <div className="post-img-container">
-          <a onClick={handleLink}>
+          <a href="" onClick={handleLink}>
             <img className="post-img" src={profilePhoto}></img>
           </a>
         </div>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import "../styles.css";
 
 function Register() {
@@ -23,7 +22,6 @@ function Register() {
     if (formData.password !== formData.confirmPassword) {
       setError(true);
     } else {
-
       const options = {
         method: "POST",
         body: JSON.stringify(formData),
@@ -91,13 +89,10 @@ function Register() {
             <a className="register-link" href="/">
               Already have an account? Click here to login
             </a>
-            {error && (
-            <p className="error">Passwords don't match!</p>
-          )}
+            {error && <p className="error">Passwords don't match!</p>}
           </span>
         </form>
       </div>
-      <Footer />
     </div>
   );
 }

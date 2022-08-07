@@ -1,14 +1,24 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles.css";
 import Moment from "moment";
 
 function Post({ userId, profilePhoto, fullName, text, date }) {
+  const navigate = useNavigate();
+
   const formatDate = Moment(date).fromNow();
+
+  const navString = "/SingleProfileView?user_id=" + userId;
+
+  const handleLink = (e) => {
+    navigate(navString);
+  };
+
   return (
     <div className="post-container">
       <div className="post-flex-container">
         <div className="post-img-container">
-          <a href={"/SingleProfileView?user_id=" + userId}>
+          <a href="" onClick={handleLink}>
             <img className="post-img" src={profilePhoto}></img>
           </a>
         </div>

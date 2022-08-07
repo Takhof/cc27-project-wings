@@ -6,6 +6,7 @@ function LogOut() {
     localStorage.clear();
     window.location.href = "/";
   };
+
   return (
     <button className="Log_out" onClick={logout}>
       Logout

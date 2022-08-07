@@ -16,7 +16,7 @@ function Profile({ userId }) {
 
   useEffect(() => {
     getProfileData();
-  }, [profile]);
+  }, []);
 
   return (
     <div className="profile-container">

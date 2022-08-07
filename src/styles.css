@@ -192,6 +192,9 @@ body {
 }
 
 /* DIRECTORY ************************************ */
+.directory-link{
+  font-size: 40px;
+}
 
 .directory-header {
   margin-top: 28px;
@@ -352,7 +355,7 @@ span {
 a:link,
 a:visited {
   text-decoration: none;
-  font-size: 12px;
+  font-size: 20px;
   color: #fff;
   transition: all 0.3s;
 }

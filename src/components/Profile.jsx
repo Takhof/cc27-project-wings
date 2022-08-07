@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 
-function Profile({userId}) {
+function Profile({ userId }) {
   const [profile, setProfile] = useState();
 
   const getProfileData = async () => {
@@ -16,7 +16,7 @@ function Profile({userId}) {
 
   useEffect(() => {
     getProfileData();
-  }, []);
+  }, [profile]);
 
   return (
     <div className="profile-container">
@@ -44,11 +44,11 @@ function Profile({userId}) {
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Linkedin URL:</p>
-            <p className="profile-content-text"><a href={profile.linkedIn}>{profile.linkedIn}</a></p>
+            <p className="profile-content-text">{profile.linkedIn}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">Twitter Handle:</p>
-            <p className="profile-content-text"><a href={"https://twitter.com/" + profile.twitter}> {profile.twitter} </a></p>
+            <p className="profile-content-text">{profile.twitter}</p>
           </div>
           <div className="profile-content">
             <p className="profile-content-title">CC Cohort:</p>

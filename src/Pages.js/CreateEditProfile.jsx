@@ -11,14 +11,19 @@ function CreateEditProfile() {
   // hidden state to pass in with form data
   const loggedInUserId = localStorage.getItem("id");
   const loggedInUserEmail = localStorage.getItem("email");
-  const photoURL = `images/butterfly${Math.floor((Math.random() * 5) + 1)}.png`
+  const photoURL = `images/butterfly${Math.floor(Math.random() * 5 + 1)}.png`;
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
 
     setFormData((values) => ({ ...values, [name]: value }));
-    setFormData((values) => ({ ...values, id: loggedInUserId, email: loggedInUserEmail, photoURL: photoURL}));
+    setFormData((values) => ({
+      ...values,
+      id: loggedInUserId,
+      email: loggedInUserEmail,
+      photoURL: photoURL,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -39,11 +44,10 @@ function CreateEditProfile() {
 
     console.log("Data from Server", data);
 
-		if (data !== "") {
+    if (data !== "") {
       // redirect
       navigate("/SingleProfileView");
-    } 
-
+    }
   };
   return (
     <div>
@@ -99,11 +103,12 @@ function CreateEditProfile() {
             <label className="form-label" htmlFor="cohort">
               CC Cohort:{" "}
             </label>
-            <select               
+            <select
               className="form-input"
               name="cohort"
               value={formData.cohort || ""}
-              onChange={handleChange}>
+              onChange={handleChange}
+            >
               <option value="28">CC28</option>
               <option value="27">CC27</option>
               <option value="26">CC26</option>
@@ -138,7 +143,6 @@ function CreateEditProfile() {
           </div>
         </form>
       </div>
-      <Footer />
     </div>
   );
 }

@@ -39,7 +39,6 @@ function Directory() {
           </div>
         )}
       </div>
-      <Footer />
     </div>
   );
 }

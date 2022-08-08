@@ -49,7 +49,7 @@ app.post("/posts/save", postController.save); // add new post
 
 // catch anything that isn't a defined route
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build/index.html"));
+  res.sendFile(path.resolve(__dirname, "..build/index.html"));
 });
 
 // ***** LISTEN ********

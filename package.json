@@ -16,14 +16,18 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "serve": "^14.0.1",
+    "server": "^1.0.37",
     "web-vitals": "^2.1.4"
   },
+  "proxy": "http://localhost:3030",
   "engines": {
     "node": "16.15.1",
     "npm": "8.11.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"nodemon ./src/server.js\"",
+    "client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

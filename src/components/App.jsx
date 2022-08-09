@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles.css";
 import Login from "./Login";
-import Header from "./Header";
+import HeaderMain from "./HeaderMain";
 import useLocalStorage from "use-local-storage";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <Header
+      <HeaderMain
         loggedInUser={loggedInUser}
         theme={theme}
         switchTheme={switchTheme}

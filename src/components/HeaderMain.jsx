@@ -1,15 +1,18 @@
 import React from "react";
 import "../styles.css";
 
-function Header(props) {
+function HeaderMain(props) {
   const email = localStorage.getItem("email");
 
   return (
     <header className="header">
       <h1 className="header-title">Wings 🦋</h1>
+      <button onClick={props.switchTheme} className="button">
+        Switch to {props.theme === "light" ? "Dark" : "Light"} Mode
+      </button>
       <div>{email && <p>Welcome Back, {email}</p>}</div>
     </header>
   );
 }
 
-export default Header;
+export default HeaderMain;

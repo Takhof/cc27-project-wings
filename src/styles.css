@@ -10,11 +10,11 @@
 }
 
 [data-theme="dark"] {
-  --background: rgb(45, 6, 6);
+  --background: rgb(1, 2, 47);
   --text-primary: white;
   --text-secondary: grey;
-  --accent: darkred;
-  --main-theme-color: black;
+  --accent: rgb(0, 5, 65);
+  --main-theme-color: rgb(8, 0, 115);
 }
 
 .App {
@@ -23,20 +23,20 @@
   font-size: large;
   font-weight: bold;
   padding: 20px;
-  height: calc(100vh - 40px);
+  height: 100vh;
   transition: all 10s;
 }
 
-button {
-  color: var(--text-primary);
-  background-color: var(--background);
-  border: 2px var(--text-primary) solid;
-  float: right;
-  transition: all 10s;
+.header-title {
 }
 
 .button {
-  text-align: right;
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  margin-left: auto;
+  margin-right: 0;
+  transition: all 10s;
 }
 
 * {
@@ -64,8 +64,6 @@ a {
 
 .header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
   background-color: var(--main-theme-color);
   color: #fff;

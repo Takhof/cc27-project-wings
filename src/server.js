@@ -44,6 +44,7 @@ app.post("/profiles/save", profileController.save); // add new profile
 // post
 app.get("/posts", postController.index); // view all newsfeed posts
 app.post("/posts/save", postController.save); // add new post
+app.put("/posts/:id", postController.updatePost); // edit post
 
 // ***** CATCH ALL ********
 

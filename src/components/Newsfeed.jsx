@@ -12,7 +12,7 @@ function Newsfeed() {
 
   useEffect(() => {
     fetchResponse();
-  }, [posts]);
+  }, []); // TODO [posts] is too many requests
 
   return (
     <div className="newsfeed-container">
@@ -23,6 +23,7 @@ function Newsfeed() {
             {posts.map((post) => {
               return (
                 <Post
+                  postId={post.postID}
                   userId={post.userID}
                   profilePhoto={post.profilePhoto}
                   fullName={post.fullName}

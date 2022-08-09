@@ -1,10 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap");
 
 :root {
-  --main-theme-color: #607eaa;
-  --accent-color: #fec260;
+  --background: white;
+  --accent: purple;
+  --text-primary: black;
+  --text-secondary: royalblue;
   --grey-text: var(--grey-text);
+  --main-theme-color: #607eaa
 }
+
+[data-theme='dark'] {
+  --background: rgb(45, 6, 6);
+  --text-primary: white;
+  --text-secondary: grey;
+  --accent: darkred;  
+  --main-theme-color: black;
+}
+
+.App {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  height: calc(100vh - 40px);
+  transition: all 10s;
+}
+
+button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all 10s;
+}
+
 
 * {
   box-sizing: border-box;
@@ -17,6 +47,7 @@ body {
 }
 
 /* GENERAL ************************************ */
+
 
 .error {
   margin-top: 12px;
@@ -33,9 +64,11 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   background-color: var(--main-theme-color);
   color: #fff;
   padding: 24px;
+  transition: all 10s;
 }
 
 /* SPV  *********************** */
@@ -134,6 +167,7 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
   box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
+  transition: all 10s;
 }
 
 .create-post-btn:hover {
@@ -314,6 +348,7 @@ span {
   margin-top: 10px;
   margin-bottom: 10px;
   box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
+  transition: all 10s;
 }
 
 .btn:hover {

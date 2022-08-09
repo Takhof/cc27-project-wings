@@ -33,11 +33,10 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
     const postText = ref.current.textContent;
 
     try {
-      const response = await axios.put(`/posts/${postId}`, {
+      await axios.put(`/posts/${postId}`, {
         userId,
         postText,
       });
-      console.log(response);
     } catch (error) {
       console.log(error);
       alert("Something went wrong");

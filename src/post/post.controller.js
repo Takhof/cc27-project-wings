@@ -21,8 +21,9 @@ module.exports = {
 
   updatePost: async function (req, res) {
     try {
+      const postId = req.params.id;
       // TODO This needs to check the post that user going to update is actually belongs to the user
-      const { userId, postId, postText } = req.body;
+      const { userId, postText } = req.body;
       postModel.updatePost({ postId, postText });
       res.status(200).send();
     } catch (error) {

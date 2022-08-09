@@ -40,7 +40,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
       console.log(response);
     } catch (error) {
       console.log(error);
-      alert("Something get wrong");
+      alert("Something went wrong");
       return;
     }
     window.location.reload();
@@ -87,7 +87,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
               </button>
               <div className="modal-header">Are you sure?</div>
               <div className="modal-content">
-                Are you ok to update? This action will not be recovered.
+                Are you sure? Editing a post is not reversible.
               </div>
               <div className="modal-actions">
                 <button

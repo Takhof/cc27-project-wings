@@ -195,6 +195,58 @@ a {
   color: var(--grey-text);
 }
 
+.editable {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.modal-container {
+  font-size: 20px;
+  background: rgb(41, 45, 62);
+  border-radius: 15px;
+  color: #fefefe;
+  padding: 10px;
+}
+
+.modal-container>.modal-header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 26px;
+  text-align: center;
+  padding: 5px;
+}
+
+.modal-container>.modal-content {
+  width: 100%;
+  padding: 10px 5px;
+  word-wrap: break-word;
+}
+
+.modal-container>.modal-actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+}
+
+.modal-container>.modal-close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #cfcece;
+}
+
+
+
+
 /* DIRECTORY ************************************ */
 
 .directory-link {
@@ -344,12 +396,14 @@ span {
   text-align: center;
   border-radius: 5px;
 }
+
 .Log_out {
   display: block;
   margin-bottom: 24px;
   color: var(--main-theme-color);
   border-radius: 5px;
 }
+
 .footer-links-container {
   text-align: right;
   display: flex;

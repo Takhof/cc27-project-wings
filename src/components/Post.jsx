@@ -66,52 +66,54 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
         </div>
       </div>
       <p className="post-timestamp">{formatDate}</p>
-      <button className="edit" onClick={(e) => editText(e)}>
-        Edit
-      </button>
-      {isEditable ? (
-        <Popup
-          trigger={
-            <button className="update" onClick={() => updatePost()}>
-              Update
-            </button>
-          }
-          modal
-          nested
-        >
-          {(close) => (
-            <div className="modal-container">
-              <button className="modal-close" onClick={close}>
-                &times;
+      <div className="post-edit-btn-container">
+        <button className="post-edit-btn" onClick={(e) => editText(e)}>
+          Edit
+        </button>
+        {isEditable ? (
+          <Popup
+            trigger={
+              <button className="post-update-btn" onClick={() => updatePost()}>
+                Update
               </button>
-              <div className="modal-header">Are you sure?</div>
-              <div className="modal-content">
-                Are you sure? Editing a post is not reversible.
-              </div>
-              <div className="modal-actions">
-                <button
-                  className="modal-button-error"
-                  onClick={() => {
-                    updatePost();
-                  }}
-                >
-                  Update
+            }
+            modal
+            nested
+          >
+            {(close) => (
+              <div className="modal-container">
+                <button className="modal-close" onClick={close}>
+                  &times;
                 </button>
-                <button
-                  className="modal-button-success"
-                  onClick={() => {
-                    close();
-                  }}
-                >
-                  Cancel
-                </button>
+                <div className="modal-header">Are you sure?</div>
+                <div className="modal-content">
+                  Are you sure? Editing a post is not reversible.
+                </div>
+                <div className="modal-actions">
+                  <button
+                    className="modal-button-error"
+                    onClick={() => {
+                      updatePost();
+                    }}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="modal-button-success"
+                    onClick={() => {
+                      close();
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
               </div>
-            </div>
-          )}
-        </Popup>
-      ) : (
-        <></>
-      )}
+            )}
+          </Popup>
+        ) : (
+          <></>
+        )}
+      </div>
     </div>
   );
 }

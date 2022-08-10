@@ -16,8 +16,6 @@ function CreatePost() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     const options = {
       method: "POST",
       body: JSON.stringify(formData),
@@ -43,7 +41,7 @@ function CreatePost() {
             className="create-post-input"
             type="textarea"
             name="text"
-            value={formData.text}
+            value={formData.text || ""}
             onChange={handleChange}
             placeholder="Post here..."
             required

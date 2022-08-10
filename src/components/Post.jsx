@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Popup from "reactjs-popup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +15,10 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
 
   const navString = "/SingleProfileView?user_id=" + userId;
 
+  useEffect(() => {
+    ref.current.classList.toggle("editable");
+  }, [isEditable]);
+
   const handleLink = (e) => {
     navigate(navString);
   };
@@ -24,7 +28,6 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
    */
   const editText = () => {
     setIsEditable(!isEditable);
-    ref.current.classList.toggle("editable");
   };
 
   /**
@@ -43,7 +46,8 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
       alert("Something went wrong");
       return;
     }
-    window.location.reload();
+
+    setIsEditable(false);
   };
 
   /**

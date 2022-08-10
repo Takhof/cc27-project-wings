@@ -8,7 +8,7 @@ import useSessionStorage from "use-session-storage";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useSessionStorage(
+  const [theme, setTheme] = useLocalStorage(
     "theme",
     defaultDark ? "dark" : "light"
   );
@@ -20,11 +20,8 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      <HeaderMain
-        loggedInUser={loggedInUser}
-        theme={theme}
-        switchTheme={switchTheme}
-      />
+      {console.log(window)}
+      <HeaderMain theme={theme} switchTheme={switchTheme} />
       <Login setLoggedInUser={(value) => setLoggedInUser(value)} />
     </div>
   );

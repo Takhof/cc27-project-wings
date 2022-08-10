@@ -23,8 +23,8 @@
   font-size: large;
   font-weight: bold;
   padding: 20px;
-  height: 100vh;
-  transition: all 10s;
+  height: 100%;
+  transition: all 5s;
 }
 
 .header-title {
@@ -36,7 +36,7 @@
   border: 2px var(--text-primary) solid;
   margin-left: auto;
   margin-right: 0;
-  transition: all 10s;
+  transition: all 5s;
 }
 
 * {
@@ -68,7 +68,7 @@ a {
   background-color: var(--main-theme-color);
   color: #fff;
   padding: 24px;
-  transition: all 10s;
+  transition: all 5s;
 }
 
 /* SPV  *********************** */
@@ -282,7 +282,7 @@ a {
   padding: 10px;
 }
 
-.modal-container>.modal-header {
+.modal-container > .modal-header {
   width: 100%;
   border-bottom: 1px solid gray;
   font-size: 26px;
@@ -290,20 +290,20 @@ a {
   padding: 5px;
 }
 
-.modal-container>.modal-content {
+.modal-container > .modal-content {
   width: 100%;
   padding: 10px 5px;
   word-wrap: break-word;
 }
 
-.modal-container>.modal-actions {
+.modal-container > .modal-actions {
   width: 100%;
   padding: 10px 5px;
   margin: auto;
   text-align: center;
 }
 
-.modal-container>.modal-close {
+.modal-container > .modal-close {
   cursor: pointer;
   position: absolute;
   display: block;
@@ -348,10 +348,6 @@ a {
   margin-top: 0;
   margin-bottom: 0;
 }
-
-
-
-
 
 /* DIRECTORY ************************************ */
 

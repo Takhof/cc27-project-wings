@@ -1,10 +1,17 @@
 import React from "react";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
+import useLocalStorage from "use-local-storage";
+
 import "../styles.css";
 function Contact() {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
   return (
-    <div>
+    <div className="App" data-theme={theme}>
       <Header />
       <div className="contact">
         <h2>Contact Us</h2>

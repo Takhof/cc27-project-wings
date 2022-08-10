@@ -4,7 +4,6 @@ import "../styles.css";
 
 function Login({ setLoggedInUser }) {
   // clear localStorage on page load
-  localStorage.clear();
 
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
@@ -39,7 +38,7 @@ function Login({ setLoggedInUser }) {
 
     if (data !== "" && data !== "Invalid credentials") {
       // reset local storage for new login
-      localStorage.clear();
+      // localStorage.clear();
 
       // set local storage with user id & email
       localStorage.setItem("id", data.id);

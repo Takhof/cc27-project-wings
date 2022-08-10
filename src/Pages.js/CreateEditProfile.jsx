@@ -2,11 +2,18 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import useLocalStorage from "use-local-storage";
 
 function CreateEditProfile() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
 
   // hidden state to pass in with form data
   const loggedInUserId = localStorage.getItem("id");
@@ -50,7 +57,7 @@ function CreateEditProfile() {
     }
   };
   return (
-    <div>
+    <div className="App" data-theme={theme}>
       <Header />
       <div className="form-container">
         <form className="create-profile-form" onSubmit={handleSubmit}>

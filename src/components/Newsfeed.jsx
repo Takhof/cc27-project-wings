@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 
-function Newsfeed() {
+function Newsfeed({ theme, setTheme }) {
   const [posts, setPosts] = useState("");
 
   const fetchResponse = async (e) => {
@@ -29,6 +29,8 @@ function Newsfeed() {
                   fullName={post.fullName}
                   text={post.text}
                   date={post.date}
+                  setTheme={setTheme}
+                  theme={theme}
                 />
               );
             })}

@@ -7,6 +7,7 @@
   --text-secondary: rgb(227, 234, 255);
   --grey-text: var(--grey-text);
   --main-theme-color: #607eaa;
+  --opacity: 1;
 }
 
 [data-theme="dark"] {
@@ -15,6 +16,17 @@
   --text-secondary: grey;
   --accent: rgb(0, 5, 65);
   --main-theme-color: rgb(8, 0, 115);
+  --opacity: 1;
+  --main-theme-color-opa: rgba(8, 0, 115, 0.4);
+}
+
+[data-theme="updating"] {
+  --background: rgb(1, 2, 47);
+  --text-secondary: grey;
+  --opacity: 0.3;
+  --text-primary: rgba(255, 255, 255, 0.4);
+  --text-secondary: grey;
+  --accent: rgb(0, 5, 65);
 }
 
 .App {
@@ -25,19 +37,17 @@
   padding: 20px;
   min-height: 800px;
   height: 100%;
-  transition: all 5s;
-}
-
-.header-title {
+  transition: all 2s;
 }
 
 .button {
   color: var(--text-primary);
+  opacity: var(--opacity);
   background-color: var(--background);
   border: 2px var(--text-primary) solid;
   margin-left: auto;
   margin-right: 0;
-  transition: all 5s;
+  transition: all 2s;
 }
 
 * {
@@ -69,7 +79,8 @@ a {
   background-color: var(--main-theme-color);
   color: #fff;
   padding: 24px;
-  transition: all 5s;
+  transition: all 2s;
+  opacity: var(--opacity);
 }
 
 /* SPV  *********************** */
@@ -130,6 +141,7 @@ a {
 
 .create-post-container {
   padding: 0 32px 0 32px;
+  opacity: var(--opacity);
 }
 
 .create-post-header {
@@ -196,6 +208,7 @@ a {
   border: 1.5px solid #444;
   border-radius: 5px;
   box-shadow: 0 5px 5px rgba(68, 68, 68, 0.05);
+  opacity: var(--opacity);
 }
 
 .post-flex-container {
@@ -369,6 +382,7 @@ a {
 
 .directory-link {
   color: var(--text-primary);
+  opacity: var(--opacity);
   display: block;
   font-size: 24px;
   margin-bottom: 24px;
@@ -404,6 +418,7 @@ a {
   height: 100px;
   border: 2px solid;
   border-color: var(--accent-color);
+  opacity: var(--opacity);
 }
 
 .profile-text-container {
@@ -521,6 +536,7 @@ span {
   margin-bottom: 24px;
   color: var(--text-primary);
   border-radius: 5px;
+  opacity: (--opacity);
 }
 
 .footer-links-container {

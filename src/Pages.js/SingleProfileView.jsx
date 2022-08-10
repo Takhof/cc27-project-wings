@@ -30,7 +30,7 @@ function SingleProfileView() {
             <Profile userId={userId} />
             <div className="posts-main-container">
               <CreatePost />
-              <Newsfeed />
+              <Newsfeed theme={theme} setTheme={setTheme} />
             </div>
           </div>
         </div>

@@ -261,7 +261,6 @@ a {
 .post-update-btn {
   border: none;
   cursor: pointer;
-  /* font-size: 18px; */
   color: #fff;
   background: rgb(255, 66, 72);
   padding: 8px 16px;
@@ -271,6 +270,22 @@ a {
 }
 
 .post-update-btn:hover {
+  background: var(--accent-color);
+}
+
+.post-red-btn {
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: rgb(255, 66, 72);
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 1px 3px 5px rgba(154, 154, 154, 0.293);
+  float: right;
+}
+
+.post-red-btn:hover {
   background: var(--accent-color);
 }
 

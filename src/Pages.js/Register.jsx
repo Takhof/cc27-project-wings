@@ -1,12 +1,10 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import "../styles.css";
 
 function Register() {
-  // clear localStorage on page load
-  localStorage.clear();
-
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();
@@ -22,26 +20,11 @@ function Register() {
     if (formData.password !== formData.confirmPassword) {
       setError(true);
     } else {
-      const options = {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      const res = await fetch("/users/save", options);
-      const data = await res.json();
-
-      console.log("Data from Server", data);
-
-      if (data !== "") {
-        // set local storage with user id & email
-        localStorage.setItem("id", data.user_id);
-        localStorage.setItem("email", data.email);
-
-        // redirect
+      try {
+        await axios.post("/users/save", formData);
         navigate("/CreateEditProfile");
+      } catch (error) {
+        console.log(error);
       }
     }
   };
@@ -49,7 +32,7 @@ function Register() {
     <div>
       <Header />
       <div className="form-container">
-        <form class="main-form" onSubmit={handleSubmit}>
+        <form className="main-form" onSubmit={handleSubmit}>
           <h2 className="form-header">Sign Up</h2>
           <label className="form-label" htmlFor="email">
             Email<span>*</span>

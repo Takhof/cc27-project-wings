@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from "react";
 import "../styles.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Profile({ userId }) {
+function Profile() {
   const [profile, setProfile] = useState();
+  const [loggedInUserId, setLoggedInUserId] = useState(null);
   const navigate = useNavigate();
 
   const handleLink = (e) => {
     navigate("/Directory");
   };
 
-  let logout = () => {
-    localStorage.clear();
-    window.location.href = "/";
-  };
-
-  const getProfileData = async () => {
-    const res = await fetch(`/profiles/view/${userId}`, {
-      method: "GET",
-    });
-    const data = await res.json();
-    console.log("Profile:", data);
-
-    setProfile(data);
+  let logout = async () => {
+    try {
+      await axios.get("/users/logout");
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    getProfileData();
+    (async () => {
+      try {
+        const payloadResponse = await axios.get("/cookie/payload");
+        const { userId } = payloadResponse.data;
+        setLoggedInUserId(userId);
+
+        const response = await axios.get(`/profiles/view/${userId}`);
+        setProfile(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, []);
 
   return (

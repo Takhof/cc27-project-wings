@@ -31,4 +31,16 @@ module.exports = {
       res.status(500).send();
     }
   },
+
+  deletePost: async function (req, res) {
+    try {
+      // TODO Check the post is belongs to the user
+      const postId = req.params.id;
+      postModel.deletePost(postId);
+      res.status(200).send();
+    } catch (error) {
+      console.log(error);
+      res.status(500).send();
+    }
+  },
 };

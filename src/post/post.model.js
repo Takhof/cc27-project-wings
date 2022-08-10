@@ -60,4 +60,13 @@ module.exports = {
       })
       .where({ post_id: post.postId });
   },
+
+  /**
+   * Delete post by post id
+   *
+   * @param {number} post_id Post id
+   */
+  deletePost: async function (post_id) {
+    await knex(POSTS_TABLE).where({ post_id }).del();
+  },
 };

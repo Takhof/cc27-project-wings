@@ -1,4 +1,7 @@
-require("dotenv").config();
+if (process.env.NODE_ENV !== "production") {
+  console.log("this was executed");
+  require("dotenv").config();
+}
 
 module.exports = {
   development: {

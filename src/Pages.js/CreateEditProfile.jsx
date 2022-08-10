@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 function CreateEditProfile() {
   const [formData, setFormData] = useState({});
+  const [loggedInUserId, setLoggedInUserId] = useState(null);
+  const [loggedInUserEmail, setLoggedInUserEmail] = useState(null);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
-  // hidden state to pass in with form data
-  const loggedInUserId = localStorage.getItem("id");
-  const loggedInUserEmail = localStorage.getItem("email");
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/cookie/payload");
+        const { userId, email } = response.data;
+        setLoggedInUserId(userId);
+        setLoggedInUserEmail(email);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   const photoURL = `images/butterfly${Math.floor(Math.random() * 5 + 1)}.png`;
 
   const handleChange = (e) => {

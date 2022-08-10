@@ -78,7 +78,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
     return (
       <div className="post-container">
         <button
-          class="post-red-btn"
+          className="post-red-btn"
           onClick={() => {
             deletePost();
           }}

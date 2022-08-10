@@ -1,18 +1,20 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 
 function Newsfeed() {
   const [posts, setPosts] = useState("");
 
-  const fetchResponse = async (e) => {
-    const res = await fetch("/posts", { method: "GET" });
-    const data = await res.json();
-    setPosts(data);
-  };
-
   useEffect(() => {
-    fetchResponse();
-  }, []); // TODO [posts] is too many requests
+    (async () => {
+      try {
+        const response = await axios.get("/posts");
+        setPosts(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [posts]); // TODO [posts] is too many requests
 
   return (
     <div className="newsfeed-container">
@@ -23,6 +25,7 @@ function Newsfeed() {
             {posts.map((post) => {
               return (
                 <Post
+                  key={post.postID}
                   postId={post.postID}
                   userId={post.userID}
                   profilePhoto={post.profilePhoto}

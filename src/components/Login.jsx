@@ -1,11 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
 
-function Login({ setLoggedInUser }) {
-  // clear localStorage on page load
-  localStorage.clear();
-
+function Login() {
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();
@@ -23,31 +21,11 @@ function Login({ setLoggedInUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const options = {
-      method: "POST",
-      body: JSON.stringify(formData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-
-    const res = await fetch("/users/login", options);
-    const data = await res.json();
-    console.log("RESPONSE FROM SERVER: ", data);
-
-    setLoggedInUser(data);
-
-    if (data !== "" && data !== "Invalid credentials") {
-      // reset local storage for new login
-      localStorage.clear();
-
-      // set local storage with user id & email
-      localStorage.setItem("id", data.id);
-      localStorage.setItem("email", data.email);
-
-      // redirect
+    try {
+      await axios.post("/users/login", formData);
       navigate("/SingleProfileView");
-    } else if (data === "Invalid credentials") {
+    } catch (error) {
+      console.log(error);
       // reset form input
       setFormData("");
       // conditionally render error
@@ -57,7 +35,7 @@ function Login({ setLoggedInUser }) {
 
   return (
     <div className="form-container">
-      <form class="main-form" onSubmit={handleSubmit}>
+      <form className="main-form" onSubmit={handleSubmit}>
         <h2 className="form-header">Login</h2>
         <div className="form-item">
           <label className="form-label" htmlFor="email">

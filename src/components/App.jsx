@@ -3,11 +3,12 @@ import "../styles.css";
 import Login from "./Login";
 import HeaderMain from "./HeaderMain";
 import useLocalStorage from "use-local-storage";
+import useSessionStorage from "use-session-storage";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useLocalStorage(
+  const [theme, setTheme] = useSessionStorage(
     "theme",
     defaultDark ? "dark" : "light"
   );

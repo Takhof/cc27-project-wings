@@ -8,6 +8,7 @@
   --grey-text: var(--grey-text);
   --main-theme-color: #607eaa;
   --opacity: 1;
+
 }
 
 [data-theme="dark"] {
@@ -27,6 +28,7 @@
   --text-primary: rgba(255, 255, 255, 0.4);
   --text-secondary: grey;
   --accent: rgb(0, 5, 65);
+  --transition: all 5s;
 }
 
 .App {
@@ -305,7 +307,7 @@ a {
 
 .modal-container {
   font-size: 20px;
-  background: rgb(41, 45, 62);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   color: #fefefe;
   padding: 10px;

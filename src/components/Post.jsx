@@ -4,10 +4,20 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
 import Moment from "moment";
+import useLocalStorage from "use-local-storage";
 
-function Post({ postId, userId, profilePhoto, fullName, text, date }) {
+function Post({
+  postId,
+  userId,
+  profilePhoto,
+  fullName,
+  text,
+  date,
+  setTheme,
+}) {
   const [isEditable, setIsEditable] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [isUpdating, setIsUpdating] = useState("false");
   const ref = useRef(null);
   const navigate = useNavigate();
 
@@ -47,6 +57,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
       return;
     }
 
+    setTheme("dark");
     setIsEditable(false);
   };
 
@@ -113,7 +124,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
               trigger={
                 <button
                   className="post-update-btn"
-                  onClick={() => updatePost()}
+                  onClick={setTheme("updating")}
                 >
                   Update
                 </button>
@@ -123,7 +134,7 @@ function Post({ postId, userId, profilePhoto, fullName, text, date }) {
             >
               {(close) => (
                 <div className="modal-container">
-                  <button className="modal-close" onClick={close}>
+                  <button className="modal-close" onClick={() => close()}>
                     &times;
                   </button>
                   <div className="modal-header">Are you sure?</div>

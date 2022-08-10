@@ -19,7 +19,6 @@ function App() {
 
   return (
     <div className="App" data-theme={theme}>
-      {console.log(window)}
       <HeaderMain theme={theme} switchTheme={switchTheme} />
       <Login setLoggedInUser={(value) => setLoggedInUser(value)} />
     </div>

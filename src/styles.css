@@ -4,7 +4,7 @@
   --background: white;
   --accent: purple;
   --text-primary: black;
-  --text-secondary: royalblue;
+  --text-secondary: rgb(227, 234, 255);
   --grey-text: var(--grey-text);
   --main-theme-color: #607eaa;
 }
@@ -23,6 +23,7 @@
   font-size: large;
   font-weight: bold;
   padding: 20px;
+  min-height: 800px;
   height: 100%;
   transition: all 5s;
 }
@@ -367,7 +368,7 @@ a {
 /* DIRECTORY ************************************ */
 
 .directory-link {
-  color: var(--main-theme-color);
+  color: var(--text-primary);
   display: block;
   font-size: 24px;
   margin-bottom: 24px;
@@ -518,7 +519,7 @@ span {
 .Log_out {
   display: block;
   margin-bottom: 24px;
-  color: var(--main-theme-color);
+  color: var(--text-primary);
   border-radius: 5px;
 }
 

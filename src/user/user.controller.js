@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwtHelper = require("../auth/jwtHelper");
+const ms = require("ms");
 
 const userModel = require("./user.model");
 
@@ -47,6 +48,19 @@ module.exports = {
     } catch (error) {
       console.log(error);
       return res.status(500).send();
+    }
+  },
+
+  logout: async function (req, res) {
+    try {
+      const cookieOptions = {
+        httpOnly: true,
+        expiresIn: new Date(Date.now() + ms("5s")),
+      };
+      res.status(200).cookie("jwtToken", "", cookieOptions).send();
+    } catch (error) {
+      console.log(error);
+      res.status(500).send();
     }
   },
 

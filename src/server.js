@@ -45,6 +45,7 @@ app.get("/cookie/payload", cookieController.extractPayload);
 
 // user
 app.get("/users", userController.index); // DEV ONLY
+app.get("/users/logout", userController.logout); // logout user
 app.post("/users/login", userController.login); // login user
 app.post("/users/save", userController.save); // register new user
 

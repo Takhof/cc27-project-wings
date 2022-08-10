@@ -12,7 +12,7 @@ module.exports = {
         postPhoto: "post_photo",
         date: "post_date",
         profilePhoto: "profiles.profile_photo",
-        fullName: "profiles.full_name"
+        fullName: "profiles.full_name",
       })
       .from(POSTS_TABLE)
       .join(PROFILES_TABLE, "profiles.user_id", "posts.user_id")
@@ -24,5 +24,40 @@ module.exports = {
     return knex(POSTS_TABLE)
       .insert(post, ["post_id"])
       .then((res) => res[0]);
+  },
+
+  /**
+   * Count how many post by post id
+   *
+   * @param {number} postId Post id
+   * @returns count result
+   */
+  countByPostId: async function (postId) {
+    const count_result = await knex
+      .count("post_id")
+      .from(POSTS_TABLE)
+      .where({ post_id: postId })
+      .first();
+
+    return count_result.count;
+  },
+
+  /**
+   * Update post by post id
+   *
+   * @param {{postId: number, postText: string}} post Post object
+   */
+  updatePost: async function (post) {
+    const count = await this.countByPostId(post.postId);
+    if (count === 0) {
+      throw new Error();
+    }
+
+    await knex(POSTS_TABLE)
+      .update({
+        post_text: post.postText,
+        updated_at: knex.fn.now(),
+      })
+      .where({ post_id: post.postId });
   },
 };

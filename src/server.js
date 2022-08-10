@@ -1,9 +1,11 @@
 // const path = require("path");
 const express = require("express");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 // to work with directory paths - see static middleware
 const path = require("path");
 
+const cookieController = require("./auth/cookie.controller");
 const userController = require("./user/user.controller");
 const profileController = require("./profile/profile.controller");
 const postController = require("./post/post.controller");
@@ -24,11 +26,22 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../build")));
 }
 
-app.use(cors()); // Required for front and backend using localhost
+app.use(
+  cors({
+    allowedHeaders: ["Content-Type"],
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+  })
+); // Required for front and backend using localhost
 app.use(express.json()); // Parse JSON
 app.use(express.urlencoded({ extended: true })); // Parse form-encoded data
+app.use(cookieParser());
 
 // ***** ROUTES *********
+
+// cookie
+app.get("/cookie/payload", cookieController.extractPayload);
 
 // user
 app.get("/users", userController.index); // DEV ONLY

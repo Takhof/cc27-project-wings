@@ -89,7 +89,7 @@ function Post({
     return (
       <div className="post-container">
         <button
-          class="post-red-btn"
+          className="post-red-btn"
           onClick={() => {
             deletePost();
           }}

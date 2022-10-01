@@ -1,9 +1,13 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
 
+
+
 function Login({ setLoggedInUser }) {
   // clear localStorage on page load
+
 
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
@@ -22,6 +26,8 @@ function Login({ setLoggedInUser }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    try {
+      await axios.post("/users/login", formData);
     const options = {
       method: "POST",
       body: JSON.stringify(formData),
@@ -46,7 +52,8 @@ function Login({ setLoggedInUser }) {
 
       // redirect
       navigate("/SingleProfileView");
-    } else if (data === "Invalid credentials") {
+    } catch (error) {
+      console.log(error);
       // reset form input
       setFormData("");
       // conditionally render error
@@ -56,7 +63,7 @@ function Login({ setLoggedInUser }) {
 
   return (
     <div className="form-container">
-      <form class="main-form" onSubmit={handleSubmit}>
+      <form className="main-form" onSubmit={handleSubmit}>
         <h2 className="form-header">Login</h2>
         <div className="form-item">
           <label className="form-label" htmlFor="email">

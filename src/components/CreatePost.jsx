@@ -1,21 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "../styles.css";
+import axios from "axios";
 
 function CreatePost() {
   const [formData, setFormData] = useState({});
+  const [loggedInUserId, setLoggedInUserId] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get("/cookie/payload");
+        const { userId } = response.data;
+        setLoggedInUserId(userId);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    const userId = localStorage.getItem("id");
 
     // unpack previous values into a copy and update; return the copy
     setFormData((values) => ({ ...values, [name]: value }));
-    setFormData((values) => ({ ...values, userId: userId }));
+    setFormData((values) => ({ ...values, userId: loggedInUserId }));
   };
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      axios.post("/posts/save", formData);
+      setFormData("");
+    } catch (error) {
+      console.log(error);
+    }
     const options = {
       method: "POST",
       body: JSON.stringify(formData),

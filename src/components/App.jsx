@@ -5,6 +5,12 @@ import HeaderMain from "./HeaderMain";
 import useLocalStorage from "use-local-storage";
 
 function App() {
+
+  return (
+    <div>
+      <Header />
+      <Login />
+
   const [loggedInUser, setLoggedInUser] = useState("");
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
@@ -21,6 +27,7 @@ function App() {
     <div className="App" data-theme={theme}>
       <HeaderMain theme={theme} switchTheme={switchTheme} />
       <Login setLoggedInUser={(value) => setLoggedInUser(value)} />
+
     </div>
   );
 }

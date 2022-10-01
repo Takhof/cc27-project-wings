@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import RegisterForm from "../components/RegisterForm";
 import "../styles.css";
+import useLocalStorage from "use-local-storage";
 
 function Register() {
+
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(false);
   const navigate = useNavigate();
@@ -28,9 +30,18 @@ function Register() {
       }
     }
   };
+
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
+
   return (
-    <div>
+    <div className="App" data-theme={theme}>
       <Header />
+
       <div className="form-container">
         <form className="main-form" onSubmit={handleSubmit}>
           <h2 className="form-header">Sign Up</h2>
@@ -76,6 +87,9 @@ function Register() {
           </span>
         </form>
       </div>
+
+      <RegisterForm />
+
     </div>
   );
 }

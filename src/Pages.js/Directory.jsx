@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import ProfileSummary from "../components/ProfileSummary";
 import Footer from "../components/Footer";
+import useLocalStorage from "use-local-storage";
 
 function Directory() {
   const [profiles, setProfiles] = useState("");
@@ -14,12 +15,18 @@ function Directory() {
     console.log("profiles: ", data);
   };
 
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
   useEffect(() => {
     getProfilesData();
   }, []);
 
   return (
-    <div>
+    <div className="App" data-theme={theme}>
       <Header />
       <h2 className="directory-header">Welcome to the Club:</h2>
       <div>

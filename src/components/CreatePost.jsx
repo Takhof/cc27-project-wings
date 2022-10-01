@@ -37,6 +37,18 @@ function CreatePost() {
     } catch (error) {
       console.log(error);
     }
+    const options = {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const res = await fetch("/posts/save", options);
+    const data = await res.json();
+
+    setFormData("");
   };
 
   return (
@@ -50,7 +62,7 @@ function CreatePost() {
             className="create-post-input"
             type="textarea"
             name="text"
-            value={formData.text}
+            value={formData.text || ""}
             onChange={handleChange}
             placeholder="Post here..."
             required

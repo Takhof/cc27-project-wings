@@ -20,6 +20,14 @@ function Header() {
     <header className="header">
       <h1 className="header-title">Wings 🦋</h1>
       <div>{loggedInUserEmail && <p>Welcome Back, {loggedInUserEmail}</p>}</div>
+
+function Header(props) {
+  const email = localStorage.getItem("email");
+
+  return (
+    <header className="header">
+      <h1 className="header-title">Wings</h1>
+      <div>{email && <p>Welcome Back, {email}</p>}</div>
     </header>
   );
 }

@@ -1,7 +1,3 @@
 # for HEROKU
-<<<<<<< HEAD
-release: npm run migrate-latest && npm run seed-data
-=======
-release: npm run migrate-latest
->>>>>>> development
+release: npm run migrate-latest && npm run seed-data && npm run build
 web: npm run server

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Post from "./Post";
 
-function Newsfeed() {
+function Newsfeed({ theme, setTheme }) {
   const [posts, setPosts] = useState("");
 
   useEffect(() => {
@@ -32,6 +32,8 @@ function Newsfeed() {
                   fullName={post.fullName}
                   text={post.text}
                   date={post.date}
+                  setTheme={setTheme}
+                  theme={theme}
                 />
               );
             })}

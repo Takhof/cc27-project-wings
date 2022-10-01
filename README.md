@@ -1,6 +1,6 @@
 # cc27-project-wings
 
-Code Chrysalis Greenfield Project - Team: Zach, Josh, Jon
+This is a project to create a Code Chrysalis social network. 
 
 ## Available Scripts
 

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
 import axios from "axios";
+
+import useLocalStorage from "use-local-storage";
+
 
 function CreateEditProfile() {
   const [formData, setFormData] = useState({});
@@ -10,6 +14,7 @@ function CreateEditProfile() {
   const [loggedInUserEmail, setLoggedInUserEmail] = useState(null);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
+
 
   useEffect(() => {
     (async () => {
@@ -24,6 +29,15 @@ function CreateEditProfile() {
     })();
   }, []);
 
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
+  // hidden state to pass in with form data
+  const loggedInUserId = localStorage.getItem("id");
+  const loggedInUserEmail = localStorage.getItem("email");
   const photoURL = `images/butterfly${Math.floor(Math.random() * 5 + 1)}.png`;
 
   const handleChange = (e) => {
@@ -63,7 +77,7 @@ function CreateEditProfile() {
     }
   };
   return (
-    <div>
+    <div className="App" data-theme={theme}>
       <Header />
       <div className="form-container">
         <form className="create-profile-form" onSubmit={handleSubmit}>

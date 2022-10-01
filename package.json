@@ -25,6 +25,7 @@
     "reactjs-popup": "^2.0.5",
     "serve": "^14.0.1",
     "server": "^1.0.37",
+    "use-local-storage": "^2.3.6",
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://localhost:3030/",
